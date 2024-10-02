@@ -34,6 +34,7 @@ export class LoginComponent {
 
   onSubmit() {
     this.submitClicked = true;
+    this.router.navigateByUrl('/submissions');
     if (this.loginForm.valid) {
       this.authSvc.login(this.loginForm.value).subscribe((response: any) => {
         if (response && response.status_code === 0) {

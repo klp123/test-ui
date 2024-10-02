@@ -187,10 +187,12 @@ export class ListSubmissionComponent implements OnInit {
           this.submissionsCount = response.submissionsCount;
           this.prepareNotes();
         } else if (response && response.status_code === 1) {
+          this.getSubmissionMock();
           console.log(response.message);
         }
       },
       (error: any) => {
+        this.getSubmissionMock();
         console.log("Something went wrong");
       }
     );
@@ -242,6 +244,14 @@ export class ListSubmissionComponent implements OnInit {
         this.toUpdateStatusValues = data.toUpdateStatusValues;
         this.groupByValues = data.groupByValues;
         this.tableWidth = data.tableWidth;
+      }
+    })
+  }
+
+  getSubmissionMock() {
+    this.sharedSvc.getTableHeaders('submission/submission-data').subscribe((data: any) => {
+      if (data) {
+        this.data = data;
       }
     })
   }
