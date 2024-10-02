@@ -1,0 +1,14 @@
+<!-- <p-calendar [iconDisplay]="'input'" variant="filled" [showIcon]="true" inputId="icondisplay" class="mr-2"  inputId="templatedisplay">
+    <ng-template pTemplate="inputicon" let-clickCallBack="clickCallBack">
+        <i class="pi pi-user pointer-events-none" (click)="clickCallBack($event)"></i>
+    </ng-template>
+</p-calender> -->
+
+<p-calendar 
+[(ngModel)]="dateRange" 
+[iconDisplay]="'input'" 
+[showIcon]="true" 
+selectionMode="single" 
+inputId="templatedisplay"
+(click)="clickCallBack($event)">
+</p-calendar>

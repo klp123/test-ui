@@ -1,0 +1,50 @@
+{
+  "name": "ang",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "jest --verbose",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "compodoc": "npx compodoc -p tsconfig.doc.json"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^18.0.0",
+    "@angular/common": "^18.0.0",
+    "@angular/compiler": "^18.0.0",
+    "@angular/core": "^18.0.0",
+    "@angular/forms": "^18.0.0",
+    "@angular/platform-browser": "^18.0.0",
+    "@angular/platform-browser-dynamic": "^18.0.0",
+    "@angular/router": "^18.0.0",
+    "@googlemaps/js-api-loader": "^1.16.8",
+    "@types/google.maps": "^3.57.0",
+    "angular-ng-autocomplete": "^2.0.12",
+    "file-saver": "^2.0.5",
+    "ngx-chips": "^3.0.0",
+    "ngx-toastr": "^19.0.0",
+    "primeflex": "^3.3.1",
+    "primeicons": "^7.0.0",
+    "primeng": "^17.18.7",
+    "quill": "^2.0.2",
+    "rxjs": "~7.8.0",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.14.3"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^18.0.4",
+    "@angular/cli": "^18.0.4",
+    "@angular/compiler-cli": "^18.0.0",
+    "@types/file-saver": "^2.0.7",
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0",
+    "jest-preset-angular": "^14.2.2",
+    "typescript": "~5.4.2"
+  }
+}

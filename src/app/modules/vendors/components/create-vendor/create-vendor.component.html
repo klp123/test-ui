@@ -1,0 +1,110 @@
+<div class="mtp-2em">
+    <div class="card">
+        <form [formGroup]="vendorForm">
+            <div class="grid">
+                <div class=" md:col-2 lg:col-2 p-4">Company</div>
+                <div class="col-12 md:col-10 lg:col-10  p-zero mbt-1em parent-dropdown">
+                    <ng-autocomplete [data]="filteredCompanyData" [searchKeyword]="'name'"
+                        placeholder="Search Company" (selected)='selectEvent($event)' formControlName="companyResetName"
+                        (inputChanged)='onSearchCompany($event)' (inputFocused)='onFocused($event)' (inputCleared)="onClearCompany()"
+                        [itemTemplate]="itemTemplate1" [notFoundTemplate]="notFoundTemplate">
+                    </ng-autocomplete>
+                
+                    <ng-template #itemTemplate1 let-item>
+                        <a [innerHTML]="item.name"></a>
+                    </ng-template>
+
+                    <ng-template #notFoundTemplate let-notFound >
+                        <div (click)="openAddConsultant()" >Add +</div>
+                        <div [innerHTML]="notFound"></div>
+                    </ng-template>
+                </div>
+
+                <div class=" md:col-2 lg:col-2 p-4">Website URL</div>
+                <div class=" md:col-10 lg:col-10">
+                    <input pInputText id="city" type="text" formControlName="website" class="input-text"
+                        [ngClass]="{'border-red': isInputfieldInValid('website')}" />
+                </div>
+
+                <div class=" md:col-2 lg:col-2 p-4">Career URL</div>
+                <div class=" md:col-10 lg:col-10">
+                    <input pInputText id="city" type="text" formControlName="careerURL" class="input-text"
+                        [ngClass]="{'border-red': isInputfieldInValid('careerURL')}" />
+                </div>
+
+                <br>
+                <div class=" md:col-2 lg:col-2 p-4">First Name</div>
+                <div class=" md:col-10 lg:col-10">
+                    <input pInputText class="input-text border-red" formControlName="firstName" type="text"
+                        [ngClass]="{'border-red': isInputfieldInValid('firstName')}" />
+                </div>
+
+                <div class=" md:col-2 lg:col-2 p-4">Last Name</div>
+                <div class=" md:col-10 lg:col-10">
+                    <input pInputText class="input-text border-red" formControlName="lastName" type="text"
+                        [ngClass]="{'border-red': isInputfieldInValid('lastName')}" />
+                </div>
+
+                <div class=" md:col-2 lg:col-2 p-4">Email</div>
+                <div class=" md:col-10 lg:col-10">
+                    <input pInputText class="input-text" formControlName="email" type="email"
+                        [ngClass]="{'border-red': isInputfieldInValid('email')}" />
+                </div>
+
+                <div class=" md:col-2 lg:col-2 p-4">Phone</div>
+                <div class=" md:col-10 lg:col-10">
+                    <input pInputTextarea id="phone" formControlName="phone" class="input-text" rows="4"
+                        [ngClass]="{'border-red': isInputfieldInValid('phone')}" />
+                </div>
+
+                <div class=" md:col-2 lg:col-2 p-4">Alternate Phone</div>
+                <div class=" md:col-10 lg:col-10">
+                    <input pInputTextarea id="phone" formControlName="alternatePhone" class="input-text" rows="4"
+                        [ngClass]="{'border-red': isInputfieldInValid('alternatePhone')}" />
+                </div>
+
+                <!-- <app-google-location></app-google-location> -->
+
+                <div class=" md:col-2 lg:col-2 p-4"></div>
+                <div class=" md:col-10 lg:col-10">
+                    <app-button [label]="'Submit'" (click)="onSubmit()" severity="primary"></app-button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<p-dialog header="Create Company" [modal]="true" [(visible)]="showAddCompanyModel" class="company-dialog sub-dialog">
+    <div class="add-company">
+       <form  [formGroup]="companyForm">
+        <div class="grid mt-4">
+        <div class=" md:col-3 lg:col-3 p-4 ">Company Name</div>
+        <div class=" md:col-9 lg:col-9">
+            <input pInputText id="city" type="text" formControlName="name" class="input-text"
+                [ngClass]="{'border-red': isInputfieldInValidCompany('name')}" />
+        </div>
+        <div class="md:col-3 lg:col-3 p-4">Website URL</div>
+        <div class=" md:col-9 lg:col-9">
+            <input pInputText class="input-text border-red" formControlName="website" type="text"
+                [ngClass]="{'border-red': isInputfieldInValidCompany('website')}" />
+        </div>
+
+        <div class="md:col-3 lg:col-3 p-4">Career URL</div>
+        <div class=" md:col-9 lg:col-9">
+            <input pInputText class="input-text border-red" formControlName="careerURL" type="text"
+                [ngClass]="{'border-red': isInputfieldInValidCompany('careerURL')}" />
+        </div>
+
+        <div class="md:col-3 lg:col-3 p-4">Address</div>
+        <div class=" md:col-9 lg:col-9">
+            <input pInputText id="city" type="text" formControlName="address" class="input-text"
+                [ngClass]="{'border-red': isInputfieldInValidCompany('address')}" />
+        </div>
+        <div class="md:col-3 lg:col-3 p-4"></div>
+        <div class=" md:col-9 lg:col-9">
+            <app-button [label]="'Submit'" (click)="onSubmitCompany()" severity="primary"></app-button>
+        </div>
+        </div>
+       </form>
+    </div>
+</p-dialog>

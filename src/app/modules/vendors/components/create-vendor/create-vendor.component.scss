@@ -1,0 +1,86 @@
+.input-text {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 70%;
+}
+
+:host ::ng-deep.p-dropdown-items ul {
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.border-red {
+    border: 2px solid red;
+}
+
+.mtp-10 {
+    padding-top: 6.5em;
+}
+
+@media (max-width: 499px) {
+
+    .pad-5px {
+        padding: 5px;
+    }
+
+    .input-text {
+        width: 100%;
+    }
+}
+
+.position-top {
+    padding-top: 4.5em;
+    padding-bottom: 1em;
+}
+
+
+:host ::ng-deep .company-dialog .p-dialog {
+    width: 50vw;
+    height: auto;
+    left: 5vw;
+}
+
+:host ::ng-deep .autocomplete-container {
+    width: 70% !important;
+   
+   
+}
+
+:host ::ng-deep .company-dialog .p-dialog .p-dialog-content {
+    padding: 0px 0rem 2rem 2.5rem;
+    overflow-x: hidden;
+}
+
+:host ::ng-deep .company-dialog .add-submission {
+    margin-top: 3em;
+}
+
+
+@media (max-width: 499px) {
+
+
+    .company-dialog .p-dialog .p-dialog-conten {
+        padding: 0px 0rem 2rem 2.5rem !important;
+    }
+
+
+
+    :host ::ng-deep .company-dialog .add-submission {
+        margin-top: 0.3em;
+    }
+
+    :host ::ng-deep .company-dialog .p-dialog {
+        width: 90vw;
+        height: 100vh;
+        left: 0vw;
+    }
+
+
+    :host ::ng-deep .company-dialog .p-dialog .p-dialog-content {
+        padding: 0rem 3rem;
+        overflow-x: hidden;
+    }
+
+
+}

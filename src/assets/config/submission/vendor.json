@@ -1,0 +1,82 @@
+{
+    "tableHeaders": [
+      {
+        "name": "Actions",
+        "width": "5%"
+      },
+      {
+        "name": "Name",
+        "width": "7%"
+      },
+        {
+          "name": "Company",
+          "width": "8%"
+        },
+        {
+          "name": "Website URL",
+          "width": "8%"
+        },
+        {
+          "name": "Email",
+          "width": "8%"
+        },
+        {
+          "name": "Phone",
+          "width": "10%"
+        },
+        {
+          "name": "Created At",
+          "width": "10%"
+        },
+        {
+          "name": "Notes",
+          "width": "7%"
+        }
+    ],
+    "tableRows": [
+      {
+        "name": "name",
+        "dataFilter": " "
+      },
+      {
+        "name": "company",
+        "dataFilter": " "
+      },
+      {
+        "name": "websiteUrl",
+        "dataFilter": " "
+      },
+      {
+        "name": "email",
+        "dataFilter": " "
+      },
+      {
+        "name": "phone",
+        "dataFilter": " "
+      },
+      {
+        "name": "createdAt",
+        "dataFilter": "date"
+      },
+      {
+        "name": "notes",
+        "dataFilter": " "
+      },
+      {
+        "name": "Notes",
+         "dataFilter": " "
+      }
+    ],
+    "groupByValues": [
+      {"name": "Name", "value": "name"},
+      {"name": "Company", "value": "company"}
+  ],
+  "toUpdateStatusValues": [
+    { "name": "Submitted", "code": "submitted" },
+    { "name": "Expire", "code": "expire" },
+    { "name": "Screening-round", "code": "screening" },
+    { "name": "Implementation-partner round", "code": "implementation" },
+    { "name": "End-client round", "code": "endClient" }
+  ]
+  }
+  

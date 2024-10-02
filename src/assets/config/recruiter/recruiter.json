@@ -1,0 +1,52 @@
+{
+    "columns": [
+      {
+        "header": "Actions",
+        "headerWidth": "5%"
+      },
+      {
+        "header": "Name",
+        "headerWidth": "5%"
+      },
+        {
+          "header": "Email",
+          "headerWidth": "3%"
+        },
+        {
+          "header": "Phone",
+          "headerWidth": "4%"
+        },
+        {
+          "header": "Alternate Phone",
+          "headerWidth": "5%"
+        },
+        {
+          "header": "created On",
+          "headerWidth": "5%"
+        }
+    ],
+    "rows": [
+      {
+        "name": "name",
+        "dataFilter": " "
+      },
+      {
+        "name": "email",
+        "dataFilter": " "
+      },
+      {
+        "name": "phone",
+        "dataFilter": " "
+      },
+      {
+        "name": "alternatePhone",
+        "dataFilter": " "
+      },
+      {
+        "name": "createdAt",
+        "dataFilter": "date"
+      }
+    ],
+    "tableWidth": "75rem"
+  }
+  

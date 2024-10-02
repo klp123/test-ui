@@ -1,0 +1,42 @@
+<div class="mtp-2em">
+    <div class="card">
+        <form [formGroup]="recruiterForm">
+            <div class="grid">
+                <div class=" md:col-2 lg:col-2 p-4">First Name</div>
+                <div class=" md:col-10 lg:col-10">
+                    <input pInputText class="input-text border-red" formControlName="firstName" type="text"
+                        [ngClass]="{'border-red': isInputfieldInValid('firstName')}" />
+                </div>
+
+                <div class=" md:col-2 lg:col-2 p-4">Last Name</div>
+                <div class=" md:col-10 lg:col-10">
+                    <input pInputText class="input-text border-red" formControlName="lastName" type="text"
+                        [ngClass]="{'border-red': isInputfieldInValid('lastName')}" />
+                </div>
+
+                <div class=" md:col-2 lg:col-2 p-4">Email</div>
+                <div class=" md:col-10 lg:col-10">
+                    <input pInputText class="input-text" formControlName="email" type="email"
+                        [ngClass]="{'border-red': isInputfieldInValid('email')}"/>
+                </div>
+
+                <div class=" md:col-2 lg:col-2 p-4">Phone</div>
+                <div class=" md:col-10 lg:col-10">
+                    <input pInputTextarea id="phone" formControlName="phone" class="input-text" rows="4"
+                        [ngClass]="{'border-red': isInputfieldInValid('phone')}" />
+                </div>
+
+                <div class=" md:col-2 lg:col-2 p-4">Alternate Phone</div>
+                <div class=" md:col-10 lg:col-10">
+                    <input pInputTextarea id="phone" formControlName="alternatePhone" class="input-text" rows="4"
+                        [ngClass]="{'border-red': isInputfieldInValid('alternatePhone')}" />
+                </div>
+
+                <div class=" md:col-2 lg:col-2 p-4"></div>
+                <div class=" md:col-10 lg:col-10">
+                    <app-button [label]="'Submit'" (click)="onSubmit()" severity="primary"></app-button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

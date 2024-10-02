@@ -1,0 +1,114 @@
+<div class="mtp-2em">
+    <div class="card">
+        <form [formGroup]="submissionForm">
+            <div class="grid">
+                <div class="col-12 md:col-2 lg:col-2  p-zero">Consultant Name</div>
+                <div class="col-12 md:col-4 lg:col-4  p-zero mbt-1em parent-dropdown">
+                    <ng-autocomplete [data]="filteredConsultantData" [searchKeyword]="'name'" formControlName="consultantResetName" 
+                        (selected)='selectEvent($event)' (inputChanged)="onSearchConsultant($event)"
+                         (inputFocused)='onFocused($event)'
+                        [itemTemplate]="itemTemplate1" [notFoundTemplate]="notFoundTemplate">
+                    </ng-autocomplete>
+                
+                    <ng-template #itemTemplate1 let-item>
+                        <a [innerHTML]="item.name"></a>
+                    </ng-template>
+
+                    <ng-template #notFoundTemplate let-notFound >
+                        <div (click)="openAddConsultant()" >Add +</div>
+                        <div [innerHTML]="notFound"></div>
+                    </ng-template>
+                </div>
+
+                <div class="col-12 md:col-2 lg:col-2 p-zero">Consultant Email</div>
+                <div class="col-12 md:col-4 lg:col-4 p-zero mbt-1em">
+                    <input pInputText class="input-text border-red" formControlName="consultantEmail" type="text"
+                        [ngClass]="{'border-red': isInputfieldInValid('consultantEmail')}" />
+                </div>
+
+                <div class="col-12 md:col-2 lg:col-2  p-zero ">Consultant Phone</div>
+                <div class="col-12 md:col-4 lg:col-4 p-zero mbt-1em">
+                    <input pInputText class="input-text border-red" formControlName="consultantPhone" type="text"
+                        [ngClass]="{'border-red': isInputfieldInValid('consultantPhone')}" />
+                </div>
+                
+
+                <div class="col-12 md:col-2 lg:col-2 p-zero ">Vendor Company</div>
+                <div class="col-12 md:col-4 lg:col-4 p-zero mbt-1em">
+                    <ng-autocomplete [data]="filteredCompanyData" [searchKeyword]="'name'" placeholder="Search Company"  formControlName="companyResetName"
+                        (selected)='selectEvent($event)' (inputChanged)='onSearchCompany($event)' (inputCleared)="onClearCompany()" 
+                        (inputFocused)='onFocused($event)' [itemTemplate]="itemTemplate"
+                        [notFoundTemplate]="notFoundTemplateVendor">
+                    </ng-autocomplete>
+
+                    <ng-template #itemTemplate let-item>
+                        <a [innerHTML]="item.name"></a>
+                    </ng-template>
+
+                    <ng-template #notFoundTemplateVendor let-notFound>
+                        <div (click)="openAddCompany()">Add +</div>
+                        <div [innerHTML]="notFound"></div>
+                    </ng-template>
+                </div>
+
+                <div class="col-12 md:col-2 lg:col-2 p-zero ">Vendor Name</div>
+                <div class="col-12 md:col-4 lg:col-4 p-zero mbt-1em">
+                    <ng-autocomplete [data]="filteredVendorData" [searchKeyword]="'name'" placeholder="Search Vendor" formControlName="vendorResetName"
+                        (selected)='selectEvent($event)' (inputChanged)='onSearchVendor($event)'
+                        (inputFocused)='onFocused($event)' [itemTemplate]="itemTemplate"
+                        [notFoundTemplate]="notFoundTemplateVendor">
+                    </ng-autocomplete>
+
+                    <ng-template #itemTemplate let-item>
+                        <a [innerHTML]="item.name"></a>
+                    </ng-template>
+
+                    <ng-template #notFoundTemplateVendor let-notFound>
+                        <div (click)="openAddVendor()">Add +</div>
+                        <div [innerHTML]="notFound"></div>
+                    </ng-template>
+                </div>
+
+                <div class="col-12 md:col-2 lg:col-2 p-zero">Vendor contact Phone</div>
+                <div class="col-12 md:col-4 lg:col-4 p-zero mbt-1em">
+                    <input pInputText class="input-text border-red" formControlName="vendorPhone" type="text"
+                        [ngClass]="{'border-red': isInputfieldInValid('vendorPhone')}" />
+                </div>
+
+                <div class="col-12 md:col-2 lg:col-2 p-zero ">Implementation Partner</div>
+                <div class="col-12 md:col-4 lg:col-4 p-zero mbt-1em">
+                    <input pInputText class="input-text border-red" formControlName="implementationPartner" type="text"
+                        [ngClass]="{'border-red': isInputfieldInValid('implementationPartner')}" />
+                </div>
+
+                <div class="col-12 md:col-2 lg:col-2 p-zero ">End Client</div>
+                <div class="col-12 md:col-4 lg:col-4 p-zero mbt-1em">
+                    <input pInputText class="input-text border-red" formControlName="endClient" type="text"
+                        [ngClass]="{'border-red': isInputfieldInValid('endClient')}" />
+                </div>
+
+                <div class="col-12 md:col-2 lg:col-2 p-zero ">Bill Rate</div>
+                <div class="col-12 md:col-4 lg:col-4 p-zero mbt-1em">
+                    <p-inputGroup>
+                        <p-inputGroupAddon>$</p-inputGroupAddon>
+                        <input type="text" class="input-text-billrate border-red" pInputText placeholder="Price"
+                            formControlName="billRate" [ngClass]="{'border-red': isInputfieldInValid('billRate')}" />
+                    </p-inputGroup>
+                </div>
+
+                <div class="col-12 md:col-2 lg:col-2 p-zero ">Job Location</div>
+                <div class="col-12 md:col-4 lg:col-4 p-zero mbt-1em">
+                    <input type="text" class="input-text border-red" pInputText placeholder="Job Location"
+                    formControlName="jobLocation"
+                    [ngClass]="{'border-red': isInputfieldInValid('jobLocation')}"/>
+                </div>
+
+                <div class=" md:col-8 lg:col-8 "></div>
+                <div class="col-12 md:col-3 lg:col-3 p-zero mbt-1em text-right">
+                    <app-button [label]="'Submit'" (click)="onSubmit()" severity="primary"></app-button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<app-spinner [isLoading]="isLoading"></app-spinner>

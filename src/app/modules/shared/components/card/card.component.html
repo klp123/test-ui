@@ -1,0 +1,85 @@
+<!-- 
+<p-fieldset legend="Filters" [toggleable]="true">
+    <div class="grid">
+      <div class="col-12 md:col-2 lg:col-2 p-zero">Global Search</div>
+      <div class="col-12 md:col-3 lg:col-3 p-zero">
+        <input pInputText class="input-text"/>
+      </div>
+      <div class="col-12 md:col-1 lg:col-1 search-btn p-zero">
+        <app-button [label]="label"></app-button>
+      </div>
+      <div class="col-12 md:col-2 lg:col-2  p-zero">Group By</div>
+      <div class="col-12 md:col-3 lg:col-3 p-zero">
+        <app-dropdown [dropDownValues]="groupByValues" Column Toggle(selectedValueEmitter)="onSelectUpdateValues($event)"></app-dropdown>
+      </div>
+    </div>
+
+    <div class="grid mtp-1em">
+      <div class="col-6 md:col-2 lg:col-2 dspnone">Calender</div>
+      <div class="col-12 md:col-8 lg:col-8 ">
+        <div class="grid calander-buttons">
+          <div class="col-6 md:col-2 lg:col-2">
+        <app-button [label]="'Today'" [rounded]="false" severity="primary" class="mr-2" (click)="filterTodaySubmissions()"/> 
+      </div> 
+      <div class="col-6 md:col-4 lg:col-4">
+        <app-button [label]="'Current Month'" [rounded]="false" severity="primary" (click)="filterMonthSubmissions()"/></div> 
+      <div class="col-6 md:col-2 lg:col-2">    
+        <app-button [label]="'Custom'" [rounded]="false" severity="primary" class="mlf-5m" (click)="showCustomDates()" /></div>
+        <div class="col-6 md:col-2 lg:col-2">
+        <app-button [label]="'Clear'" [rounded]="false" severity="primary"  class="mlf-5m" (click)="clearFilters()" /></div>
+  </div>
+      </div>
+    </div>
+  
+    <div class="grid custom-calender" *ngIf="showCustom">
+      <div class="col-6 md:col-2 lg:col-2 dspnone"></div>
+      <div class="col-12 md:col-1 lg:col-1 f-date"> Date Range </div>
+      <div class="col-12 md:col-2 lg:col-2">
+        <app-calender for="buttondisplay" (selectedDateRange)="onSelectDateRange($event)"></app-calender>
+      </div>
+      <div class="col-12 md:col-2 lg:col-2">
+        <app-button [label]="'Apply'" [rounded]="false" severity="primary" (click)="onApplyCustomDateFilter()"/></div>
+    </div>
+</p-fieldset>
+
+ -->
+
+<div class="filter-right">
+  <app-button class="filter-btn" [label]="'Filters'" [rounded]="false" severity="primary" icon="pi pi-filter" iconPos="right" (click)="op.toggle($event)"  />
+  <app-button class="filter-btn" [label]="'Add New'" [rounded]="false" severity="primary" icon="pi pi-plus" iconPos="right"  (click)="onClickAddBtn()"/>
+  <app-button class="filter-btn" [label]="'Export'" [rounded]="false" severity="primary"  icon="pi pi-file-export" iconPos="right" (click)="onClickExportBtn()"/>
+</div>
+
+<p-overlayPanel #op  class="overlay-popup">
+  <div class="filter-text"> Filters</div>
+ 
+  <div class="flex flex-column gap-2 overlaypopup">
+  <div class="grid ">
+      <div class="col-12 md:col-5 lg:col-5  p-zero">
+          <label for="username">GroupBy</label>          
+          <app-dropdown [dropDownValues]="groupByValues" (selectedValueEmitter)="onSelectUpdateValues($event)"></app-dropdown>
+          </div>
+          <div class="col-12 md:col-2 lg:col-2  p-zero"></div>
+          <div class="col-12 md:col-5 lg:col-5  p-zero">
+          <label for="testing" *ngIf="showCustom"> Date Range </label>  
+          <app-calender for="buttondisplay" (selectedDateRange)="onSelectDateRange($event)" *ngIf="showCustom"></app-calender>
+          </div>
+         
+
+         
+  </div>
+</div> 
+
+<div class="text-right calander-btns">
+  
+  <app-button [label]="'Today'" [rounded]="false" severity="primary" class="ml-2 testing" (click)="filterTodaySubmissions()"/>
+  <app-button [label]="'Current Month'" [rounded]="false" severity="primary" class="ml-2 testing" (click)="filterMonthSubmissions()"/>  
+  <app-button [label]="'Custom'" [rounded]="false" severity="primary" class="ml-2 testing" (click)="showCustomDates()"/>
+ 
+ <div class="mt-2"><app-button [label]="'Clear'" [rounded]="false" severity="primary"  class="ml-2 testing"  (click)="clearFilters()"/>
+  <app-button *ngIf="showCustom" [label]="'Apply'" [rounded]="false" class="ml-2 testing" severity="primary" (click)="onApplyCustomDateFilter()"/></div> 
+ 
+</div>
+
+
+</p-overlayPanel>

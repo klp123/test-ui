@@ -1,0 +1,281 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.sidebar {
+  position: fixed;
+  height: 100%;
+  width: 240px;
+  top: 60px;
+  z-index: 9999;
+  background: #3C4962;
+  transition: all 2s ease;
+  border-right: 1px solid lightgray;
+  
+}
+
+.sidebar.active {
+  width: 1px;
+}
+
+.sidebar .nav-links {
+  margin-top: 0px;
+}
+
+.sidebar .nav-links li {
+  position: relative;
+  list-style: none;
+  height: 35px;
+}
+
+.sidebar .nav-links li a {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  padding: 1rem 1.5rem 1rem 1rem;
+}
+
+.sidebar .nav-links li a.active {
+  background: #ddd8d847;
+}
+
+.sidebar .nav-links li a:hover {
+  background: #ddd8d847;
+}
+
+.sidebar .nav-links li i {
+  min-width: 1px;
+  text-align: center;
+  font-size: 18px;
+  color: #999;
+}
+
+.sidebar .nav-links li a .links_name {
+  color: #999;
+  font-size: 14px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.sidebar .nav-links .log_out {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.sidebar.active~.home-section {
+  width: calc(100% - 1px);
+  left: 1px;
+}
+
+
+.sidebar.active~.home-section nav {
+  left: 1px;
+  width: calc(100% - 1px);
+}
+
+.home-section nav .sidebar-button {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+nav .sidebar-button i {
+  font-size: 35px;
+  margin-right: 10px;
+}
+
+::ngdeep .p-tree {
+  padding: 0px !important;
+}
+
+.layout-menu-profile {
+  border-bottom: 1px solid #5180b5;
+}
+
+.layout-menu-profile>button {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: .5rem 1.5rem;
+}
+
+.layout-menu-profile>button>span {
+  display: flex;
+  flex-direction: column;
+  margin-left: .5rem;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.layout-menu-profile>button>span>small {
+  letter-spacing: 4 !important;
+}
+
+.layout-menu-profile>button>i {
+  margin-left: auto;
+  transition: transform var(--transition-duration);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #3C4962; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #E5E8EC; 
+}
+
+:host ::ng-deep .p-tree .p-tree-container .p-treenode .p-treenode-content{
+  padding: 0PX !important;
+}
+
+:host ::ng-deep .p-tree .p-tree-container .p-treenode .p-treenode-content.p-highlight{
+  color: #3C4962;
+  border-radius: 0px !important;
+  border: none !important;
+}
+.sidebar-height {
+  padding-top: 0px;
+  height: calc(100% - 4rem);
+  overflow-y: scroll;
+}
+
+.sidebar-head {
+  color: #E5E8EC;
+  font-size: 16px;
+  padding:0px 10px;
+  letter-spacing: 1px;
+}
+
+
+
+/* Responsive Media Query */
+@media (max-width: 1240px) {
+  .sidebar {
+    width:30%;
+      
+ 
+  }
+
+  .sidebar.active {
+    width: 220px;
+  }
+
+  .home-section {
+    width: calc(100% - 1px);
+    left: 1px;
+  }
+
+  .sidebar.active~.home-section {
+    /* width: calc(100% - 220px); */
+    overflow: hidden;
+    left: 220px;
+  }
+
+  .home-section nav {
+    width: calc(100% - 1px);
+    left: 1px;
+  }
+
+  .sidebar.active~.home-section nav {
+    width: calc(100% - 220px);
+    left: 220px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .home-content .sales-boxes {
+    flex-direction: column;
+  }
+
+  .home-content .sales-boxes .box {
+    width: 100%;
+    overflow-x: scroll;
+    margin-bottom: 30px;
+  }
+
+  .home-content .sales-boxes .top-sales {
+    margin: 0;
+  }
+}
+
+@media (max-width: 1000px) {
+  .overview-boxes .box {
+    width: calc(100% / 2 - 15px);
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 700px) {
+
+  /*  nav .sidebar-button .dashboard,
+    nav .profile-details .admin_name,
+    nav .profile-details i{
+      display: b;
+    }*/
+  .home-section nav .profile-details {
+    height: 50px;
+    min-width: 40px;
+  }
+
+  .home-content .sales-boxes .sales-details {
+    width: 560px;
+  }
+}
+
+@media (max-width: 550px) {
+  .overview-boxes .box {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .sidebar.active~.home-section nav .profile-details {
+    display: none;
+  }
+}
+
+@media (max-width: 499px) {
+  .sidebar {
+    width: 60%;
+  top:50px;
+    transition: all 0.5s ease;
+  }
+
+  .sidebar.active {
+    width: 1px;
+  }
+
+  .home-section {
+    width: 100%;
+    left: 0;
+  }
+
+  .sidebar.active~.home-section {
+    left: 10px;
+    width: calc(100% - 1px);
+  }
+
+  .home-section nav {
+    width: 100%;
+    left: 0;
+  }
+
+  .sidebar.active~.home-section nav {
+    left: 0px;
+    width: calc(100% - 1px);
+  }
+}

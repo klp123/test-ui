@@ -1,0 +1,91 @@
+$green: #209957;
+$white: #fff;
+$offwhite: #f9f9f9;
+
+html,body{
+  font-size: 10px;
+  background-color: $offwhite;
+}
+
+button:focus{
+  outline: none;
+}
+button{
+  cursor: pointer
+}
+
+
+.mobile-device{
+  width: 400px;
+  border-left: 2px solid $green;
+  border-right: 2px solid $green;
+  height:3rem;
+  position: relative;
+  margin: 0 auto
+}
+
+
+// call us button styles
+.call-us-btn {
+        -webkit-box-shadow: 0px 0px 15px 2px rgba(214, 214, 214, 0.19);
+        -moz-box-shadow: 0px 0px 15px 2px rgba(214, 214, 214, 0.19);
+        box-shadow: 0px 0px 15px 2px rgba(214, 214, 214, 0.19);
+        border-radius: 2rem;
+        padding: 0.5em 1em;
+        height: 4rem;
+        width: 15rem;
+        overflow: hidden;
+        position: absolute;
+        left: 50%;
+        top: 10%;
+        -webkit-transition: all 0.4s ease;
+        /* For Safari 3.1 to 6.0 */
+        transition: all 0.4s ease;
+        background-color: $white;
+  transform: translate3d(-50%, -50%, 0);
+
+        ul {
+            a {
+                color: #62aefa;
+            }
+
+            font-size: 2.5rem;
+
+            li {
+                padding: 1.5rem 0;
+            }
+
+            padding-bottom: 1rem;
+        }
+
+        button {
+            background: none;
+            border: none;
+            color: $green;
+            font-size: 2rem;
+            font-family: lato, sans-serif;
+            font-weight: 700;
+            width: 100%;
+            height: 100%;
+            span {
+                margin-right: 0.5rem;
+            }
+        }
+
+        &.open {
+            top: 50%;
+            left: 50%;
+            width: 80%;
+            height: 2rem;
+            z-index: 999999;
+            background-color: $white;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 2em;
+            justify-content: space-between;
+            -webkit-transition: all 0.4s ease;
+            /* For Safari 3.1 to 6.0 */
+            transition: all 0.4s ease;
+        }
+    }

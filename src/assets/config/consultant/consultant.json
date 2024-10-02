@@ -1,0 +1,188 @@
+{
+  "columns": [
+    {
+      "header": "Actions",
+      "headerWidth": "5%"
+    },
+    {
+      "header": "Name",
+      "headerWidth": "5%"
+    },
+    {
+      "header": "Phone",
+      "headerWidth": "4%"
+    },
+    {
+      "header": "Email",
+      "headerWidth": "4%"
+    },
+    {
+      "header": "Actual Visa Status",
+      "headerWidth": "6%"
+    },
+    {
+      "header": "Marketing Visa",
+      "headerWidth": "5%"
+    },
+    {
+      "header": "Marketing Experience",
+      "headerWidth": "5%"
+    },
+    {
+      "header": "Marketing LinkedIn",
+      "headerWidth": "6%"
+    },
+    {
+      "header": "Marketing Phone",
+      "headerWidth": "6%"
+    },
+    {
+      "header": "Marketing StartDate",
+      "headerWidth": "7%"
+    },
+    {
+      "header": "Marketing Phone",
+      "headerWidth": "6%"
+    },
+    {
+      "header": "RealTime Exp",
+      "headerWidth": "5%"
+    },
+    {
+      "header": "Skills",
+      "headerWidth": "5%"
+    },
+    {
+      "header": "Prev Companies",
+      "headerWidth": "6%"
+    },
+    {
+      "header": "Preferred Locations",
+      "headerWidth": "5%"
+    },
+    {
+      "header": "Whasaap Num",
+      "headerWidth": "5%"
+    },
+    {
+      "header": "Notes",
+      "headerWidth": "5%"
+    }
+  ],
+  "rows": [
+    {
+      "name": "name",
+      "dataFilter": " ",
+      "link": " "
+    },
+    {
+      "name": "phone",
+      "dataFilter": " ",
+      "link": " "
+    },
+    {
+      "name": "email",
+      "dataFilter": " ",
+      "link": " "
+    },
+    {
+      "name": "actualVisaStatus",
+      "dataFilter": " ",
+      "link": " "
+    },
+    {
+      "name": "marketingVisa",
+      "dataFilter": " ",
+      "link": " "
+    },
+    {
+      "name": "marketingExp",
+      "dataFilter": " ",
+      "link": " "
+    },
+    {
+      "name": "marketingLinkedIn",
+      "dataFilter": " ",
+      "type": "link",
+      "link": "yes"
+    },
+    {
+      "name": "marketingPhone",
+      "dataFilter": " ",
+      "link": " "
+    },
+    {
+      "name": "marketingStartDate",
+      "dataFilter": "date",
+      "link": " "
+    },
+    {
+      "name": "marketingPhone",
+      "dataFilter": " ",
+      "link": " "
+    },
+    {
+      "name": "realTimeExp",
+      "dataFilter": " ",
+      "link": " "
+    },
+    {
+      "name": "skills",
+      "dataFilter": " ",
+      "link": " "
+    },
+    {
+      "name": "prevCompanies",
+      "dataFilter": " ",
+      "link": " "
+    },
+    {
+      "name": "preferredlocations",
+      "dataFilter": " ",
+      "link": " "
+    },
+    {
+      "name": "whatsaapNum",
+      "dataFilter": " ",
+      "link": " "
+    },
+    {
+      "name": "subNotes",
+      "dataFilter": " ",
+      "link": " "
+    }
+  ],
+  "tableWidth": "185vw",
+  "groupByValues": [
+    {
+      "name": "Name",
+      "value": "name"
+    },
+    {
+      "name": "Company",
+      "value": "company"
+    }
+  ],
+  "toUpdateStatusValues": [
+    {
+      "name": "Submitted",
+      "code": "submitted"
+    },
+    {
+      "name": "Expire",
+      "code": "expire"
+    },
+    {
+      "name": "Screening-round",
+      "code": "screening"
+    },
+    {
+      "name": "Implementation-partner round",
+      "code": "implementation"
+    },
+    {
+      "name": "End-client round",
+      "code": "endClient"
+    }
+  ]
+}

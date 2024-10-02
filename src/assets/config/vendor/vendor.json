@@ -1,0 +1,85 @@
+{
+  "columns": [
+    {
+      "header": "Actions",
+      "headerWidth": "7%"
+    },
+    {
+      "header": "Name",
+      "headerWidth": "7%"
+    },
+    {
+      "header": "Company",
+      "headerWidth": "8%"
+    },
+    {
+      "header": "Website URL",
+      "headerWidth": "8%"
+    },
+    {
+      "header": "Career URL",
+      "headerWidth": "8%"
+    },
+    {
+      "header": "Notes",
+      "headerWidth": "5%"
+    }
+  ],
+  "rows": [
+    {
+      "name": "name",
+      "dataFilter": " "
+    },
+    {
+      "name": "company",
+      "dataFilter": " "
+    },
+    {
+      "name": "website",
+      "dataFilter": " ",
+      "type": "link"
+    },
+    {
+      "name": "careerURL",
+      "dataFilter": " ",
+       "type": "link"
+    },
+    {
+      "name": "notes",
+      "dataFilter": " "
+    }
+  ],
+  "tableWidth": "75rem",
+  "groupByValues": [
+    {
+      "name": "Name",
+      "value": "name"
+    },
+    {
+      "name": "Company",
+      "value": "company"
+    }
+  ],
+  "toUpdateStatusValues": [
+    {
+      "name": "Submitted",
+      "code": "submitted"
+    },
+    {
+      "name": "Expire",
+      "code": "expire"
+    },
+    {
+      "name": "Screening-round",
+      "code": "screening"
+    },
+    {
+      "name": "Implementation-partner round",
+      "code": "implementation"
+    },
+    {
+      "name": "End-client round",
+      "code": "endClient"
+    }
+  ]
+}

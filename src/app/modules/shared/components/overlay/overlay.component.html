@@ -1,0 +1,46 @@
+<div class="card flex justify-content-center border-none">
+    <div (click)="op.toggle($event)">
+        <ul class="list-none p-0 m-0 flex flex-column gap-3 ">
+            <li class="flex align-items-center gap-2">
+                <img [src]="'https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png'" alt="demo"
+                    style="width: 32px" />
+                <div>
+                    <span class="font-medium">{{ loginUserData.firstName }} {{ loginUserData.lastName }}</span>
+                    <div class="text-sm text-color-secondary">{{ loginUserData.email }}</div>
+                </div>
+                <div class="flex align-items-center gap-2 text-color-secondary ml-auto text-sm">
+                    <i class="pi pi-angle-down"></i>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <p-overlayPanel #op>
+        <div class="flex flex-column gap-2 w-18rem">
+            <div>
+                <ul class="list-none p-0 m-0 flex flex-column gap-3">
+                    <li class="mb-2">
+                        <div class="flex gap-3 p-3 bg-primary-600 menu-img"><img
+                                src="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" alt="demo">
+                            <div class="flex flex-column cursor-pointer"><span class="font-semibold text-white">{{
+                                    loginUserData.firstName }} {{ loginUserData.lastName }}</span>
+                                <span class="text-xs font-normal text-white">{{ loginUserData?.recruiterPosition?.name
+                                    }}</span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="py-1 px-1 flex  cursor-pointer"><a><i class="pi pi pi-cog pi-star text-lg"></i><span
+                                class="font-semibold mx-3">Settings</span></a></li>
+
+                    <li class="py-1 px-1 flex cursor-pointer"><a><i class="pi pi-compass pi-image text-lg"></i>
+                            <span class="font-semibold mx-3">Support</span></a></li>
+                    <li class="py-1 px-1 flex cursor-pointer"><a><i class="pi pi-file pi-lock text-lg"></i><span
+                                class="font-semibold mx-3">Terms of Usage</span></a></li>
+                    <li class="py-1 px-1 flex cursor-pointer"><a><i class="pi pi-power-off pi-image text-lg"></i><span
+                                class="font-semibold mx-3" (click)="logout()">Logout</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </p-overlayPanel>
+</div>

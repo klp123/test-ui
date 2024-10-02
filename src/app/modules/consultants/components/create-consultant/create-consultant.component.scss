@@ -1,0 +1,44 @@
+.input-text{
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 70%;
+}
+
+:host ::ng-deep.p-dropdown-items ul{
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.position-top {
+    padding-top: 4.5em;
+    padding-bottom: 1em;
+}
+.input-textarea{
+    border: 1px solid #ccc;
+    padding: auto;
+    width: 70%;
+    border-radius: 5px;
+}
+.mtp-3em{
+    margin-top: -9em;
+}
+.input-text-skills{
+    border: 1px solid #ccc;
+   height: 12em;
+    width: 70%;
+    border-radius: 5px;
+}
+.border-red {
+    border: 2px solid red;
+}
+:host ::ng-deep .p-dialog-header{
+    padding: 1.5rem 1.5rem 0px 1.5rem !important;
+    border-bottom: 1px solid #ccc !important;
+    }
+
+@media (max-width: 499px) {
+    .p-dialog .p-dialog-conten{
+        padding: 0px 0rem 2rem 2.5rem !important;
+    }
+}

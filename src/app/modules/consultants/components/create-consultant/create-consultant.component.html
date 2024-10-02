@@ -1,0 +1,172 @@
+<div class="mtp-2em">
+    <div class="card">
+        <form [formGroup]="consultantForm">
+            <div class="grid">
+                <div class="col-12 md:col-2 lg:col-2  p-zero">First Name</div>
+                <div class="col-12 md:col-4 lg:col-4  p-zero mbt-1em">
+                    <input pInputText class="input-text border-red" formControlName="firstName" type="text"
+                        [ngClass]="{'border-red': isInputfieldInValid('firstName')}" />
+                </div>
+
+                <div class="col-12 md:col-2 lg:col-2  p-zero">Last Name</div>
+                <div class="col-12 md:col-4 lg:col-4  p-zero mbt-1em">
+                    <input pInputText class="input-text border-red" formControlName="lastName" type="text"
+                        [ngClass]="{'border-red': isInputfieldInValid('lastName')}" />
+                </div>
+
+                <div class="col-12 md:col-2 lg:col-2  p-zero">Email</div>
+                <div class="col-12 md:col-4 lg:col-4  p-zero mbt-1em">
+                    <input pInputText class="input-text" formControlName="email" type="email"
+                        [ngClass]="{'border-red': isInputfieldInValid('email')}" />
+                </div>
+
+                <div class="col-12 md:col-2 lg:col-2  p-zero">Phone</div>
+                <div class="col-12 md:col-4 lg:col-4  p-zero mbt-1em">
+                    <input pInputTextarea id="phone" formControlName="phone" class="input-text" rows="4"
+                        [ngClass]="{'border-red': isInputfieldInValid('phone')}" />
+                </div>
+
+                <div class="col-12 md:col-2 lg:col-2  p-zero">Alternate Phone</div>
+                <div class="col-12 md:col-4 lg:col-4  p-zero mbt-1em">
+                    <input pInputTextarea id="alternatePhone" formControlName="alternatePhone" class="input-text" rows="4"
+                        [ngClass]="{'border-red': isInputfieldInValid('alternatePhone')}" />
+                </div>
+
+                <div class="col-12 md:col-2 lg:col-2  p-zero">City</div>
+                <div class="col-12 md:col-4 lg:col-4  p-zero mbt-1em">
+                    <input pInputTextarea id="city" formControlName="city" class="input-text" rows="4"
+                        [ngClass]="{'border-red': isInputfieldInValid('city')}" />
+                </div>
+
+                <div class="col-12 md:col-2 lg:col-2  p-zero">State</div>
+                <div class="col-12 md:col-4 lg:col-4  p-zero mbt-1em">
+                    <input pInputTextarea id="state" formControlName="state" class="input-text" rows="4"
+                        [ngClass]="{'border-red': isInputfieldInValid('state')}" />
+                </div>
+
+                <div class="col-12 md:col-2 lg:col-2  p-zero">Total Experience</div>
+                <div class="col-12 md:col-4 lg:col-4  p-zero mbt-1em">
+                    <input pInputTextarea id="address" formControlName="totalExp" class="input-text" rows="4"
+                        [ngClass]="{'border-red': isInputfieldInValid('totalExp')}" />
+                </div>
+
+                <div class="col-12 md:col-2 lg:col-2  p-zero">Marketing Experience</div>
+                <div class="col-12 md:col-4 lg:col-4  p-zero mbt-1em">
+                    <input pInputTextarea id="address" formControlName="marketingExp" class="input-text" rows="4"
+                        [ngClass]="{'border-red': isInputfieldInValid('marketingExp')}" />
+                </div>
+
+                <div class="col-12 md:col-2 lg:col-2  p-zero">Marketing VISA</div>
+                <div class="col-12 md:col-4 lg:col-4  p-zero mbt-1em">
+                    <input pInputTextarea id="address" formControlName="marketingVisa" class="input-text" rows="4"
+                        [ngClass]="{'border-red': isInputfieldInValid('marketingVisa')}" />
+                </div>
+
+                <div class="col-12 md:col-2 lg:col-2  p-zero">marketing Phone</div>
+                <div class="col-12 md:col-4 lg:col-4  p-zero mbt-1em">
+                    <input pInputTextarea id="address" formControlName="marketingPhone" class="input-text" rows="4"
+                        [ngClass]="{'border-red': isInputfieldInValid('marketingPhone')}" />
+                </div>
+
+                <div class="col-12 md:col-2 lg:col-2  p-zero">Marketing Email</div>
+                <div class="col-12 md:col-4 lg:col-4  p-zero mbt-1em">
+                    <input pInputTextarea id="address" formControlName="marketingEmail" class="input-text" rows="4"
+                        [ngClass]="{'border-red': isInputfieldInValid('marketingEmail')}" />
+                </div>
+
+                <div class="col-12 md:col-2 lg:col-2  p-zero">Marketing LinkedIn URL</div>
+                <div class="col-12 md:col-4 lg:col-4  p-zero mbt-1em">
+                    <input pInputTextarea id="address" formControlName="marketingLinkedIn" class="input-text" rows="4"
+                        [ngClass]="{'border-red': isInputfieldInValid('marketingLinkedIn')}" />
+                </div>
+
+                <div class="col-12 md:col-2 lg:col-2  p-zero">Birth Year</div>
+                <div class="col-12 md:col-4 lg:col-4  p-zero mbt-1em">
+                    <input pInputTextarea id="address" formControlName="marketingEmail" class="input-text" rows="4"
+                        [ngClass]="{'border-red': isInputfieldInValid('marketingEmail')}" />
+                </div>
+
+                <div class="col-12 md:col-2 lg:col-2  p-zero">Whatsaap Num</div>
+                <div class="col-12 md:col-4 lg:col-4  p-zero mbt-1em">
+                    <input pInputTextarea id="address" formControlName="whatsaapNum" class="input-text" rows="4"
+                        [ngClass]="{'border-red': isInputfieldInValid('whatsaapNum')}" />
+                </div>
+
+                <div class="col-12 md:col-2 lg:col-2  p-zero">Actual VISA Status</div>
+                <div class="col-12 md:col-4 lg:col-4  p-zero mbt-1em">
+                    <input pInputTextarea id="address" formControlName="actualVisaStatus" class="input-text" rows="4"
+                        [ngClass]="{'border-red': isInputfieldInValid('actualVisaStatus')}" />
+                </div>
+
+                <div class="col-12 md:col-2 lg:col-2  p-zero">RealTime Experience</div>
+                <div class="col-12 md:col-4 lg:col-4  p-zero mbt-1em">
+                    <input pInputTextarea id="address" formControlName="realTimeExp" class="input-text" rows="4"
+                        [ngClass]="{'border-red': isInputfieldInValid('realTimeExp')}" />
+                </div>
+
+                <div class="col-12 md:col-2 lg:col-2  p-zero">Current Location</div>
+                <div class="col-12 md:col-4 lg:col-4  p-zero mbt-1em">
+                    <input pInputTextarea id="address" formControlName="currentLocation" class="input-text" rows="4"
+                        [ngClass]="{'border-red': isInputfieldInValid('currentLocation')}" />
+                </div>
+
+
+
+
+                <div class="col-12 md:col-2 lg:col-2  p-zero">Marketing StartDate</div>
+                <div class="col-12 md:col-4 lg:col-4  p-zero mbt-1em">
+                    <app-calender for="buttondisplay" rows="4" [ngClass]="{'border-red': isInputfieldInValid('marketingStartDate')}" (selectedDateRange)="onSelectMarketingStartDate($event)"></app-calender>
+                </div>
+
+
+         
+                <div class="col-12 md:col-2 lg:col-2  p-zero">Comments</div>
+                <div class="col-12 md:col-4 lg:col-4  p-zero mbt-1em">
+                    <input pInputTextarea id="address" formControlName="comments" class="input-text" rows="4"
+                        [ngClass]="{'border-red': isInputfieldInValid('comments')}" />
+                </div>
+
+                <div class="col-12 md:col-2 lg:col-2  p-zero">Resume</div>
+                <div class="col-12 md:col-4 lg:col-4  p-zero mbt-1em">
+                    <!-- <app-file-upload (fileData)="storeFile($event)"></app-file-upload> -->
+                    <input type="file" id="fileInput" (change)="storeFile($event)">
+                </div>
+
+                <div class="col-12 md:col-2 lg:col-2  p-zero"></div>
+                <div class="col-12 md:col-4 lg:col-4  p-zero mbt-1em">
+                   
+                </div>
+
+
+                <div class="col-12 md:col-2 lg:col-2  p-zero">Preferred Locations</div>
+                <div class="col-12 md:col-4 lg:col-4  p-zero mbt-1em">
+                    <tag-input formControlName="preferredlocations" theme='minimal' class="input-textarea" rows="2" [ngClass]="{'border-red': isInputfieldInValid('preferredlocations')}"></tag-input>
+                </div>
+
+              
+                <div class="col-12 md:col-2 lg:col-2  p-zero"></div>
+                <div class="col-12 md:col-4 lg:col-4  p-zero mbt-1em">
+                   </div>
+                <div class="col-12 md:col-2 lg:col-2  p-zero">Previous Companies</div>
+                <div class="col-12 md:col-4 lg:col-4  p-zero mbt-1em">
+                    <tag-input formControlName="prevCompanies" theme='minimal' class="input-textarea" rows="2" [ngClass]="{'border-red': isInputfieldInValid('prevCompanies')}" ></tag-input>
+                </div>
+                <div class="col-12 md:col-2 lg:col-2  p-zero mtp-3em">Skills</div>
+                <div class="col-12 md:col-4 lg:col-4  p-zero mbt-1em mtp-3em">
+                    <tag-input  formControlName="skills" theme='minimal' class="input-text-skills" rows="4" [ngClass]="{'border-red': isInputfieldInValid('skills')}"></tag-input>
+                </div>
+                
+                <div class="col-12 md:col-2 lg:col-2  p-zero"></div>
+                <div class="col-12 md:col-4 lg:col-4  p-zero mbt-1em">
+                   </div>
+                <div class="col-12 md:col-2 lg:col-2  p-zero"></div>
+                <div class="col-12 md:col-3 lg:col-3  p-zero mbt-1em text-right">
+                    <app-button [label]="'Submit'" (click)="uploadFile()" severity="primary"></app-button>
+                </div>
+          
+            </div>
+        </form>
+    </div>
+</div>
+
+<app-spinner  [isLoading]="isLoading"></app-spinner>

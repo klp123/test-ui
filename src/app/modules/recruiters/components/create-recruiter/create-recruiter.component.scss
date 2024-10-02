@@ -1,0 +1,20 @@
+.input-text{
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 70%;
+}
+
+:host ::ng-deep.p-dropdown-items ul{
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.position-top {
+    padding-top: 4.5em;
+    padding-bottom: 1em;
+}
+
+.border-red {
+    border: 2px solid red;
+}

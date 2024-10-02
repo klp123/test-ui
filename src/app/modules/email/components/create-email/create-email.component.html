@@ -1,0 +1,53 @@
+<div class="mtp-6em">
+    <div class="card-body">
+        <form [formGroup]="emailForm">
+            <div class="grid">
+                <div class="col-12 md:col-2 lg:col-2 p-zero">From Email</div>
+                <div class="col-12 md:col-9 lg:col-9">
+                    <input pInputText class="input-text border-red" formControlName="fromEmail" type="text"
+                        [ngClass]="{'border-red': isInputfieldInValid('fromEmail')}" />
+                </div>
+
+                <div class="col-12 md:col-2 lg:col-2 ">To Email</div>
+                <div class="col-12  md:col-9 lg:col-9">
+                    <ng-autocomplete [data]="filteredConsultantData" [searchKeyword]="'email'" formControlName="toEmailReset"
+                        (selected)='selectEvent($event)' (inputChanged)="onSearchEmail($event)"
+                        (inputFocused)='onFocused($event)' [itemTemplate]="itemTemplate1"
+                        [ngClass]="{'border-red': isInputfieldInValid('toEmail')}"
+                        [notFoundTemplate]="notFoundTemplate">
+                    </ng-autocomplete>
+
+                    <ng-template #itemTemplate1 let-item>
+                        <a [innerHTML]="item.name"></a>
+                    </ng-template>
+
+                    <ng-template #notFoundTemplate let-notFound>
+                        <div [innerHTML]="notFound"></div>
+                    </ng-template>
+                </div>
+
+                <div class="col-12 md:col-2 lg:col-2">Subject</div>
+                <div class="col-12 md:col-9 lg:col-9">
+                    <input pInputText class="input-text" formControlName="subject" type="email"
+                        [ngClass]="{'border-red': isInputfieldInValid('subject')}" />
+                </div>
+
+                <div class=" col-12 md:col-2 lg:col-2">Description</div>
+                <div class="col-12 md:col-9 lg:col-9">
+                    <p-editor [(ngModel)]="description" class="input-text"
+                        [ngClass]="{'border-red': isInputfieldInValid('description')}"
+                        [ngModelOptions]="{standalone: true}" name="description" ngDefaultControl
+                        [ngClass]="{'border-red': isInputfieldInValid('description')}" [style]="{ height: '320px' }" />
+                </div>
+
+                <div class="col-12 md:col-2 lg:col-2  p-zero"></div>
+                <div class="col-12 md:col-9 lg:col-9  p-zero mbt-1em ">
+                    <app-button [label]="'Submit'" severity="primary" (click)="onSubmit()">Submit</app-button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<app-spinner [isLoading]="isLoading"></app-spinner>

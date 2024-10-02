@@ -1,0 +1,26 @@
+<!--  -->
+<div class="container">
+     
+    <div class="right">
+        <div class="login-box">
+            <div class="login-title">
+            <h2>Login</h2>
+        </div>
+            <form [formGroup]="loginForm">
+                <div class="input-box">
+                    <label for="username">Email</label>
+                    <input type="text" id="username" name="username" formControlName="email" [ngClass]="{'border-red': isInputfieldInValid('email')}">
+                </div>
+                <div class="input-box">
+                    <label for="username">Password</label>
+                    <input type="password" id="username" name="username" formControlName="password" [ngClass]="{'border-red': isInputfieldInValid('password')}">
+                </div>
+                <button type="submit" (click)="onSubmit()">Login</button>
+            </form>
+
+            <p routerLink="/auth/forgot-password" class="forgot-password">Forgot Password</p>
+        </div>
+    </div>
+</div>
+
+<app-spinner [isLoading]="isLoading"></app-spinner>

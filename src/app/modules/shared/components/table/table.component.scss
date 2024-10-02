@@ -1,0 +1,211 @@
+:host ::ng-deep .p-cell-editing {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+:host ::ng-deep .p-datatable .p-datatable-tbody>tr>td {
+    border-color: rgb(229, 231, 235);
+    border-width: 0px 0px 1px;
+    background-color: #fff;
+}
+
+.timeline-heading {
+    text-align: center;
+}
+
+:host ::ng-deep .p-datatable-thead>tr>td {
+    border-color: rgb(229, 231, 235);
+    border-width: 0px 0px 1px;
+    background-color: #fff;
+}
+
+:host ::ng-deep .p-datatable-thead>tr.apply-background>td {
+    background: blue !important;
+}
+
+:host ::ng-deep .p-datatable .p-datatable-thead>tr>th {
+    background-color: #fff;
+    padding: 0.5rem 0.7rem;
+}
+
+:host ::ng-deep p-dialog .align-items {
+    display: flex;
+    align-items: center;
+    .delete {
+        margin-left: 2em;
+    }
+}
+
+:host ::ng-deep .p-datatable-table .p-datatable-tbody > tr.p-highlight {
+    background-color: red !important;
+}
+
+.p-datatable .p-datatable-tbody > tr.p-highlight > td {
+    background-color: #EFF6FF !important;
+}
+
+:host ::ng-deep .p-datatable-table .p-datatable-thead>tr:nth-child(2) {
+    border-bottom: 2px solid lightgray;
+}
+
+::ng-deep .p-inputtext {
+    padding: 5px !important;
+}
+
+
+:host ::ng-deep .p-rowgroup-footer td {
+    font-weight: 700;
+}
+
+:host ::ng-deep .p-rowgroup-header {
+    span {
+        font-weight: 700;
+    }
+
+    .p-row-toggler {
+        vertical-align: middle;
+        margin-right: .25rem;
+    }
+}
+
+.table-row {
+    margin-left: 2em;
+}
+
+.table-header {
+    height: 4em;
+}
+
+:host ::ng-deep .p-datatable-wrapper {
+    border-radius: 5px;
+}
+
+:host ::ng-deep .p-dropdown-items-wrapper ul {
+    padding-left: 0em !important;
+}
+:host ::ng-deep .p-multiselect{
+background: transparent !important;
+width: 100%;
+}
+.globla-input{
+    padding: 12px 10px 12px 33px;
+    margin-bottom: 17px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    width: 100%;
+}
+.search-icon{
+    position: relative;
+    left: 15px;
+    top: 29px;
+}
+.padding-input{
+    padding: 0px 10px !important;
+}
+.table-top{
+    margin-top: -6.2em;
+}
+.pad-2em{
+    padding: 1.3em 1em;
+}
+@media (max-width: 499px) {
+    :host ::ng-deep .p-dropdown-items-wrapper ul {
+        padding-left: 0em !important;
+        width: 100%;
+    }
+}
+
+/* width */
+.table-scroll::-webkit-scrollbar {
+    width: 3px !important;
+    border-radius: 10px;
+
+}
+
+.table-scroll::-webkit-scrollbar-track {
+    background-color: darkgrey;
+    border-radius: 10px;
+}
+
+.table-scroll::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.table-scroll {
+    scrollbar-color: #ccc #e0e0e0;
+    scrollbar-width: 3px !important;
+    border-radius: 10px;
+    height: 3px !important;
+}
+
+.table-scroll {
+    scrollbar-width: 3px !important;
+    border-radius: 10px;
+}
+
+.card {
+    background: var(--surface-card);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+:host ::ng-deep .p-datatable .p-datatable-tbody>tr.p-highlight>td {
+    background-color: lightblue !important;
+    color: #000;
+}
+
+// :host ::ng-deep .p-datatable .p-datatable-thead>tr>th {
+//     background-color: #fff !important;
+//     color: #000;
+//     font-weight: bold;
+// }
+
+:host ::ng-deep .p-datatable .p-datatable-header {
+    border: none;
+    background: none !important;
+    width: 30vw;
+    position: absolute;
+    top: -5em;
+    left: 32vw;
+}
+
+:host ::ng-deep .prncil-btn2.p-button.p-button-icon-only{
+    background: green;
+    color: white;
+    margin-left: 7px;
+    width: 2.2rem !important;
+    padding: 0.75rem 0;
+    height: 2em !important;
+    border: 1px solid green;
+}
+
+
+:host ::ng-deep .pencil-btn .p-button.p-button-icon-only {
+    background: green;
+    color: white;
+    margin-left: 7px;
+    width: 2.2rem !important;
+    padding: 0.75rem 0;
+    height: 2em !important;
+    margin-right: 1em;
+    border: 1px solid green;
+}
+
+:host ::ng-deep .trash-btn .p-button.p-button-icon-only {
+    background: orangered;
+    color: white;
+    margin-left: 7px;
+    width: 2.2rem !important;
+    padding: 0.75rem 0;
+    height: 2em !important;
+    margin-right: 1em;
+    border: 1px solid orangered;
+}
+
+:host ::ng-deep .p-button.p-button-icon-only {
+    width: 2.2rem !important;
+    padding: 0.75rem 0;
+    height: 2em !important;
+    margin-right: 1em;
+}

@@ -1,0 +1,200 @@
+{
+    "columns": [
+      {
+        "header": "Actions",
+        "headerWidth": "5%",
+        "field": "",
+        "type": " ",
+        "dataFilter": " ",
+        "rowDataFilter": ""
+      },
+      {
+        "header": "Created Date",
+        "headerWidth": "6%",
+        "field": "createdAt",
+        "dataFilter": "date",
+        "type": " ",
+        "rowDataFilter": "date"
+      },
+      {
+        "header": "Consultant",
+        "headerWidth": "5%",
+        "field": "consultantName",
+        "dataFilter": " ",
+        "type": " ",
+        "rowDataFilter": " "
+      },
+      {
+        "header": "Bench Sales Recruiter",
+        "headerWidth": "5%",
+        "field": "recruiterName",
+        "dataFilter": " ",
+        "type": " ",
+        "rowDataFilter": " "
+      },
+      {
+        "header": "Vendor company",
+        "headerWidth": "6%",
+        "field": "vendorCompany",
+        "dataFilter": " ",
+        "type": " ",
+        "rowDataFilter": " "
+      },
+      {
+        "header": "Interview Round",
+        "headerWidth": "7%",
+        "field": "status",
+        "type": " ",
+        "dataFilter": " ",
+        "rowDataFilter": " "
+      },
+      {
+        "header": "Status",
+        "headerWidth": "4%",
+        "field": "subStatus",
+        "dataFilter": " ",
+        "type": " ",
+        "rowDataFilter": " "
+      },
+      {
+        "header": "Notes",
+        "headerWidth": "6%",
+        "field": "subNotes",
+        "dataFilter": " ",
+        "type": " ",
+        "rowDataFilter": " "
+      },
+      {
+        "header": "Vendor Name",
+        "headerWidth": "5%",
+        "field": "vendorName",
+        "dataFilter": " ",
+        "type": " ",
+        "rowDataFilter": " "
+      },
+      {
+        "header": "Vendor phone",
+        "headerWidth": "5%",
+        "field": "vendorPhone",
+        "dataFilter": " ",
+        "type": " ",
+        "rowDataFilter": " "
+      },
+      {
+        "header": "Implementation Partner",
+        "headerWidth": "5%",
+        "field": "implementationPartner",
+        "dataFilter": " ",
+        "type": " ",
+        "rowDataFilter": " "
+      },
+      {
+        "header": "End client",
+        "headerWidth": "5%",
+        "field": "endClient",
+        "dataFilter": " ",
+        "type": " ",
+        "rowDataFilter": " "
+      },
+      {
+        "header": "Job location",
+        "headerWidth": "5%",
+        "field": "jobLocation",
+        "dataFilter": " ",
+        "type": " ",
+        "rowDataFilter": " "
+      }
+    ],  
+  "rows": [
+    {
+      "name": "createdAt",
+      "dataFilter": "date"
+    },
+    {
+      "name": "consultantName",
+      "dataFilter": " "
+    },
+    {
+      "name": "recruiterName",
+      "dataFilter": " "
+    },
+    {
+      "name": "vendorCompany",
+      "dataFilter": " "
+    },
+    {
+      "name": "status",
+      "dataFilter": " "
+    },
+    {
+      "name": "subStatus",
+      "dataFilter": " "
+    },
+    {
+      "name": "subNotes",
+      "dataFilter": " "
+    },
+    {
+      "name": "vendorName",
+      "dataFilter": " "
+    },
+    {
+      "name": "vendorPhone",
+      "dataFilter": " "
+    },
+    {
+      "name": "implementationPartner",
+      "dataFilter": " "
+    },
+    {
+      "name": "endClient",
+      "dataFilter": " "
+    },
+    {
+      "name": "jobLocation",
+      "dataFilter": " "
+    }
+  ],
+  "tableWidth": "132vw",
+  "groupByValues": [
+    {
+      "name": "consultant",
+      "code": "consultantName"
+    },
+    {
+      "name": "vendor",
+      "code": "vendorName"
+    },
+    {
+      "name": "recruiter",
+      "code": "recruiterName"
+    },
+    {
+      "name": "submitted Date",
+      "code": "createdAt"
+    }
+  ],
+  "toUpdateStatusValues": [
+    {
+      "name": "Submitted",
+      "code": "submitted"
+    },
+    {
+      "name": "Expire",
+      "code": "expire"
+    },
+    {
+      "name": "Screening-round",
+      "code": "screening"
+    },
+    {
+      "name": "Implementation-partner round",
+      "code": "implementation"
+    },
+    {
+      "name": "End-client round",
+      "code": "endClient"
+    }
+  ]
+}
+

@@ -1,0 +1,8 @@
+<div class="card flex justify-content-center testing">
+    <p-tree  
+        [value]="menuOptions" 
+        class="w-full bg-blue" 
+        selectionMode="single" 
+        [(selection)]="selectedFile" 
+        (click)="onSelectMenu()"/>
+</div>

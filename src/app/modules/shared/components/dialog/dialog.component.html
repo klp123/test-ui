@@ -1,0 +1,5 @@
+<p-dialog header="Edit Profile" [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
+    <div>
+        <app-dropdown [dropDownValues]="actionValues" (selectedValueEmitter)="onSelectAction($event)"></app-dropdown>
+    </div>
+</p-dialog>

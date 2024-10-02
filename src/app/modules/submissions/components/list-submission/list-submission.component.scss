@@ -1,0 +1,171 @@
+.clanedar-layout {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 10px;
+}
+
+.bottom-position {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  z-index: 9;
+}
+
+:host ::ng-deep .p-button.p-button-icon-only {
+  width: 2.5rem !important;
+  padding: 0.75rem 0;
+  height: 2.1em !important;
+}
+
+app-timeline {
+  margin-top: 3rem;
+}
+
+:host ::ng-deep .p-dialog-header {
+  padding: 0.5rem 1.5rem;
+  border-bottom: 1px solid #ccc
+}
+
+.position-top {
+  padding-top: 4.5em;
+  padding-bottom: 1em;
+}
+
+:host ::ng-deep .p-dropdown {
+  width: 100%;
+}
+
+
+.p-button.p-button-secondary,
+.p-button-group.p-button-secondary>.p-button,
+.p-splitbutton.p-button-secondary>.p-button {
+  color: black !important;
+  background-color: white !important;
+}
+
+:host ::ng-deep .submission-notes .p-dialog {
+  width: 50%;
+  height: auto;
+  left: 9vw;
+}
+
+:host ::ng-deep .p-inputtextarea {
+  width: 100%;
+}
+
+:host ::ng-deep .submission-dialog .p-dialog {
+  width: 78vw;
+  height: auto;
+  left: 9vw;
+}
+
+:host ::ng-deep .submission-dialog .p-dialog .p-dialog-content {
+  padding: 0px 0rem 2rem 2.5rem;
+  overflow-x: hidden;
+}
+
+:host ::ng-deep .submission-dialog .add-submission {
+  margin-top: 3em;
+}
+
+:host ::ng-deep .consultant-add .add-submission {
+  margin-top: 3em;
+}
+
+.submission--update-btn {
+  position: absolute;
+  right: 2em;
+  bottom: 1em;
+}
+
+:host ::ng-deep .sub-dialog {
+  .p-dialog-header {
+    margin-top: 13em;
+  }
+}
+
+.session-update-popup {
+  width: 35em !important;
+  height: 20em !important;
+}
+
+:host ::ng-deep .session-timeline-popup .p-dialog {
+  width: 45em !important;
+  height: 40em !important;
+}
+
+:host ::ng-deep .session-timeline-popup .p-dialog .p-dialog-content {
+  padding-top: 1em;
+}
+
+:host ::ng-deep .p-dialog-header {
+  padding: 1.5rem 1.5rem 0px 1.5rem !important;
+  border-bottom: 1px solid #ccc !important;
+}
+
+@media (max-width: 499px) {
+  app-timeline {
+    margin-top: 0rem;
+  }
+
+  .submission-dialog .p-dialog .p-dialog-conten {
+    padding: 0px 0rem 2rem 2.5rem !important;
+  }
+
+  :host ::ng-deep .session-update-popup .p-button {
+    margin: 3px auto;
+  }
+
+  :host ::ng-deep .session-timeline-popup .p-dialog {
+    width: 25em !important;
+    height: 25em !important;
+  }
+
+  .submission--notes--popup {
+    width: 15rem;
+    height: 25rem;
+  }
+
+  .session-update-popup {
+    width: 20rem !important;
+    height: 25rem !important;
+  }
+
+  :host ::ng-deep .submission-notes .p-dialog {
+    width: 90%;
+    height: auto;
+    left: 0vw;
+  }
+
+  :host ::ng-deep .submission-dialog .add-submission {
+    margin-top: 0.3em;
+  }
+
+  :host ::ng-deep .submission-dialog .p-dialog {
+    width: 90vw;
+    height: 100vh;
+    left: 0vw;
+  }
+
+  :host ::ng-deep .p-dialog-header {
+    padding: 0.5rem 2rem !important;
+  }
+
+  :host ::ng-deep .submission-dialog .p-dialog .p-dialog-content {
+    padding: 0rem 3rem;
+    overflow-x: hidden;
+  }
+
+  .p-zero {
+    padding: 5px 2px !important;
+  }
+
+  :host ::ng-deep .p-multiselect {
+    background: transparent !important;
+    width: 300px;
+}
+
+:host ::ng-deep .p-multiselect:hover {
+    border: 1px solid #ccc !important;
+}
+}

@@ -1,0 +1,50 @@
+.input-text{
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 70%;
+}
+
+:host ::ng-deep.p-dropdown-items ul{
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.position-top {
+    padding-top: 4.5em;
+    padding-bottom: 1em;
+}
+
+.border-red {
+    border: 2px solid red;
+}
+
+.mtp-6em {
+    margin-top: 6em;
+}
+
+:host ::ng-deep .p-dialog-header{
+    padding: 1.5rem 1.5rem 0px 1.5rem !important;
+    border-bottom: 1px solid #ccc !important;
+    }
+    :host ::ng-deep .card-body{
+    background: #ffffff;
+    color: #4b5563;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 6px;
+padding: 2em;
+}
+@media (max-width: 499px) {
+    .p-dialog .p-dialog-conten{
+        padding: 0px 0rem 2rem 2.5rem !important;
+    }
+    .input-text{
+        padding: 8px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        width: 100%;
+    }
+    .col-12{
+        padding: 6px; 
+    }
+}

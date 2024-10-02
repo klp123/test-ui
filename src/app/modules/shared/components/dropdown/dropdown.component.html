@@ -1,0 +1,16 @@
+
+<p-dropdown 
+    [options]="dropDownValues" 
+    [(ngModel)]="selectedValue" 
+    placeholder="Select a value">
+    <ng-template pTemplate="selectedItem">
+        <div class="flex align-items-center gap-2" *ngIf="selectedValue">
+            <div>{{ selectedValue.name }}</div>
+        </div>
+    </ng-template>
+    <ng-template let-value pTemplate="item">
+        <div class="flex align-items-center gap-2">
+            <div (click)="onSelectValue(value.name)">{{ value.name }}</div>
+        </div>
+    </ng-template>
+</p-dropdown>

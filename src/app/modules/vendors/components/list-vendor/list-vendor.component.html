@@ -1,0 +1,17 @@
+<div class="grid position-top ">
+    <div class="col-12 md:col-12 lg:col-12 ">
+        <app-card  [title]="'Vendors'" [groupByValues]="groupByValues" (selectedDateRange)="selectedDateRange($event)" (onGlobalSearch)="onGlobalSearch($event)"
+            (resetFilters)="resetFilters()" (onClickAdd)="addNew()" (onClickExport)="downloadExcel()">
+        </app-card>
+    </div>
+</div>
+
+<p-dialog header="Create Vendor" [modal]="true" [(visible)]="showAddVendor" class="vendor-dialog">
+    <div class="add-vendor">
+        <app-create-vendor (vendorCreated)="createVendor()" (closeModal)="closeModal()"  [editData]="editData"></app-create-vendor>
+    </div>
+</p-dialog>
+
+<app-table [columns]="columns" [data]="data" [rows]="rows" [groupByValues]="groupByValues" (selectedActionEmitter)="onSelectAction($event)"
+    [groupBy]="groupBy" [tableWidth]="tableWidth"  [pageType]="'vendor'" (onGlobalSearch)="onGlobalSearch($event)"></app-table>
+
