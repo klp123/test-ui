@@ -4,11 +4,12 @@ import { SharedService } from "../../service/shared.service";
 import { OverlayComponent } from '../overlay/overlay.component';
 import { CommonModule } from '@angular/common';
 import { SubMenuComponent } from '../sub-menu/sub-menu.component';
+import { SubMenu2Component } from '../sub-menu2/sub-menu2.component';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
-  imports: [OverlayComponent, CommonModule, SubMenuComponent],
+  imports: [OverlayComponent, CommonModule, SubMenuComponent, SubMenu2Component],
   standalone: true
 })
 export class HeaderComponent implements OnInit {
