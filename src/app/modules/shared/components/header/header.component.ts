@@ -3,12 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 import { SharedService } from "../../service/shared.service";
 import { OverlayComponent } from '../overlay/overlay.component';
 import { CommonModule } from '@angular/common';
-
+import { SubMenuComponent } from '../sub-menu/sub-menu.component';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
-  imports: [OverlayComponent, CommonModule],
+  imports: [OverlayComponent, CommonModule, SubMenuComponent],
   standalone: true
 })
 export class HeaderComponent implements OnInit {

@@ -1,13 +1,3 @@
-<div class="card">
-    <p-timeline [value]="timelineData" >
-        <ng-template pTemplate="content" let-event>
-            <small class="p-text-secondary">{{ event.timeStamp | date:'medium'  }}</small>
-        </ng-template>
-        <ng-template pTemplate="opposite" let-event>
-            {{ event.status }} 
-            <p *ngIf="event.subStatus">
-                <p-tag [value]="event.subStatus" [severity]="getSeverity(event.subStatus)" />
-            </p>
-        </ng-template>
-    </p-timeline>
-</div>
+<ngx-timeline
+[events]="events"
+></ngx-timeline>

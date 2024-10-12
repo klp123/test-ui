@@ -2,17 +2,26 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';  
 import { TimelineModule } from 'primeng/timeline';
 import { TagModule } from 'primeng/tag';
+import { NgxTimelineModule } from '@frxjs/ngx-timeline';
 
 @Component({
   selector: 'app-timeline',
   templateUrl: './timeline.component.html',
   styleUrl: './timeline.component.scss',
-  imports: [ TimelineModule, CommonModule, TagModule ],
+  imports: [ TimelineModule, CommonModule, TagModule, NgxTimelineModule ],
   standalone: true
 })
 export class TimelineComponent {
   @Input() timelineData: any;
-
+  date = new Date();
+  events: any = [
+    { id: 5, description: 'This is the description of the event 5', timestamp: this.date, title: 'title 5', itemPosition: 'left' },
+    { id: 0, description: 'This is the description of the event 0', timestamp: this.date, title: 'title 0', itemPosition: 'right' },
+    { id: 1, description: 'This is the description of the event 1', timestamp: this.date, title: 'title 1', itemPosition: 'left' },
+    { id: 2, description: 'This is the description of the event 2', timestamp: this.date, title: 'title 2', itemPosition: 'right' },
+    { id: 3, description: 'This is the description of the event 3', timestamp: this.date, title: 'title 3', itemPosition: 'left' },
+    { id: 4, description: 'This is the description of the event 4', timestamp: this.date, title: 'title 4', itemPosition: 'right' },
+  ];
   constructor(){
     }
 
