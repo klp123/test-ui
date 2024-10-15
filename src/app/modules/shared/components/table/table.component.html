@@ -28,9 +28,9 @@
         </tr>
       </ng-template>
 
-      <ng-template pTemplate="body" let-data let-editing="editing" let-expanded="expanded" let-columns="columns">
-        <tr [pSelectableRow]="data" (click)="onClickCell(data)" (keyup.enter)="onClickCell(data);"
-          [ngClass]="{'p-highlight': data._id === selectedCellId}">
+      <ng-template pTemplate="body"  let-data let-editing="editing" let-expanded="expanded" let-columns="columns">
+        <tr [pSelectableRow]="data" (click)="onClickCell(data)" (keyup.enter)="onClickCell(data);" id="testing"
+          [ngClass]="{'p-highlight': data._id === selectedCellId}" class="bgm-test">
           <td>
             <p-button *ngIf="table === 'submission'" type="button" pRipple [pRowToggler]="data" [text]="true"
               [rounded]="true" [plain]="true" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"
@@ -74,8 +74,8 @@
         <tr *ngIf="product._id === selectedId">
           <td></td>
           <td style="width: 76%;">
-            <p *ngIf="statusTimeLine && statusTimeLine.length" class="timeline-heading"><b>TIMELINE</b></p>
-            <app-timeline [timelineData]="statusTimeLine"></app-timeline>
+            <p  class="timeline-heading"><b>TIMELINE</b></p>
+            <app-timeline ></app-timeline>
           </td>
         </tr>
       </ng-template>

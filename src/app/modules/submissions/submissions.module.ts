@@ -31,6 +31,7 @@ import { VendorsModule } from '../vendors/vendors.module';
 import { SpeedDialModule } from 'primeng/speeddial';
 import { HttpInterceptorService } from '../../interceptors/http.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { SubMenu2Component } from "../shared/components/sub-menu2/sub-menu2.component";
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     VendorsModule,
     AddActionsComponent,
     ToastrModule.forRoot(), 
-    SpinnerComponent
+    SpinnerComponent,
+    SubMenu2Component
   ],
   providers: [provideHttpClient(), {
     provide: HTTP_INTERCEPTORS,

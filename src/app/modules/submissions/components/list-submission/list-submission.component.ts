@@ -5,10 +5,13 @@ import { SharedService } from "../../../shared/service/shared.service";
 import { VendorService } from "../../../vendors/service/vendor.service";
 import { ConsultantService } from "../../../consultants/services/consultant.service";
 
+
 @Component({
   selector: "app-list-submission",
   templateUrl: "./list-submission.component.html",
-  styleUrls: ["./list-submission.component.scss"], // Corrected here
+  styleUrls: ["./list-submission.component.scss"], // Corrected here imports: [SubMenu2Component],
+ 
+  
 })
 export class ListSubmissionComponent implements OnInit {
   @Output() selectedActionEmitter: any = new EventEmitter();

@@ -103,6 +103,19 @@ app-timeline {
   border-bottom: 1px solid #ccc !important;
 }
 
+.timeline-bgm{
+  background-color: #fff !important;
+    border-radius: 10px;
+    height: 70vh;
+    overflow-y: scroll;
+}
+
+.pzero{
+  padding: 0px;
+}
+:host ::ng-deep .col-right{
+  padding: 1rem !important;
+}
 @media (max-width: 499px) {
   app-timeline {
     margin-top: 0rem;
