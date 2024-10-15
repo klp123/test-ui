@@ -14,8 +14,8 @@ body{
   top: 80;
 }
 .min-home-section {
-  width: calc(100% - 240px);
-  left: 240px;
+  width:100%;
+  left: 0px;
 }
 
 .exp-home-section {
@@ -45,8 +45,8 @@ body{
   display: flex;
   align-items: center;
   position: fixed;
-  width: calc(100% - 240px);
-  left: 240px;
+  width: 100%;
+  left: 0px;
   z-index: 100;
   padding: 0 20px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
@@ -75,7 +75,7 @@ body{
   .sidebar.active ~ .home-section {
     /* width: calc(100% - 220px); */
     overflow: hidden;
-    left: 220px;
+    left: 0px;
   }
   .home-section nav {
     width: calc(100% - 1px);

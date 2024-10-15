@@ -1,5 +1,6 @@
 <div class="grid position-top ">
     <div class="col-12 md:col-12 lg:col-12 ">
+        <!-- <app-sub-menu2></app-sub-menu2> -->
         <app-card [groupByValues]="groupByValues" (selectedDateRange)="selectedDateRange($event)"
             (onClickAdd)="addNew()" (onClickExport)="downloadExcel()" (resetFilters)="resetFilters()">
         </app-card>
@@ -55,5 +56,15 @@
     </div>
 </p-dialog>
 <app-spinner [isLoading]="isLoading"></app-spinner>
-<app-table [columns]="columns" [data]="data" [rows]="rows" (selectedActionEmitter)="onSelectAction($event)"
+<div class="grid">
+    <div class="col-12 md:col-8 lg:col-8">
+        <app-table [columns]="columns" [data]="data" [rows]="rows" (selectedActionEmitter)="onSelectAction($event)"
     [groupBy]="groupBy" [table]="'submission'" [pageType]="'submission'" [groupByValues]="groupByValues" [statusTimeLine]="statusTimeLine" [tableWidth]="tableWidth" [submissionsCount]="submissionsCount" (onGlobalSearch)="onGlobalSearch($event)" ></app-table>
+
+    </div>
+    <div class="col-12 md:col-4 lg:col-4 pzero">
+        <div class="timeline-bgm">
+        <app-timeline ></app-timeline>
+    </div>
+    </div>
+    </div>

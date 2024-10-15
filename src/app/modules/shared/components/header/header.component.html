@@ -1,9 +1,12 @@
 <div class="layout-content-wrapper">
-  <div class="layout-breadcrumb-container">
-    <div>
+  <div class="layout-breadcrumb-container grid">
+    
+  
+    <div class="col-4 md:col-2 lg:col-2" >
       <h2 class="f16">E-Farmer</h2>
     </div>
-    <div>
+
+    <div class="col-2 md:col-1 lg:col-1">
       <nav class="layout-breadcrumb">
         <ol class="icons-gap">
           <li>
@@ -17,23 +20,41 @@
         </ol>
       </nav>
     </div>
-
-    <div>
+    <!-- <div class="col-6 md:col-2 lg:col-2 displayhidden-back   displayhidden">
       <nav class="layout-breadcrumb">
-        <ol class="icons-gap"></ol>
-      </nav>
-    </div>
+        <ol class="icons-gap">
+          <li class="hidden lg:flex">
+            <i pbadge="" value="2" class="p-element pi pi-bell p-overlay-badge">
+              <span id="pn_id_43_badge" class="p-badge p-component p-badge-no-gutter">2</span></i>
+          </li>
 
-    <div>
-      <app-sub-menu2></app-sub-menu2>
+         
+          <li class="hidden lg:flex"><i class="pi pi-cog"></i></li>
+          <li>
+            <app-overlay></app-overlay>
+          </li>
+
+          <li class=" lg:flex">
+            <i pbadge="" value="6" class="p-element pi pi-comments p-overlay-badge">
+              <span id="pn_id_44_badge" class="p-badge p-component p-badge-no-gutter">6</span></i>
+          </li>
+        </ol>
+      </nav>
+    </div> -->
+
+ 
+
+    <div class="col-12 md:col-7 lg:col-7  pzero">
+      
       <app-sub-menu></app-sub-menu>
-      <li class="layout-topbar-search hidden lg:flex">
+      <app-sub-menu2></app-sub-menu2>
+      <!-- <li class="layout-topbar-search hidden lg:flex">
         <i class="pi pi-search"></i>
         <input pinputtext="" type="text" placeholder="Search..." class="p-inputtext p-component p-element" />
-      </li>
+      </li> -->
     </div>
 
-    <div>
+    <div class="col-12 md:col-2 lg:col-2 displayhidden-back   ">
       <nav class="layout-breadcrumb">
         <ol class="icons-gap">
           <li class="hidden lg:flex">
@@ -46,11 +67,13 @@
               <span id="pn_id_44_badge" class="p-badge p-component p-badge-no-gutter">6</span></i>
           </li>
           <li class="hidden lg:flex"><i class="pi pi-cog"></i></li>
-          <li>
+          <li class="mobile-position">
             <app-overlay></app-overlay>
           </li>
         </ol>
       </nav>
     </div>
+
+
   </div>
 </div>

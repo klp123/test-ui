@@ -7,7 +7,6 @@ import { ButtonModule } from 'primeng/button';
 import { ToolbarModule } from 'primeng/toolbar';
 import { TimelineComponent } from '../timeline/timeline.component';
 import { DialogModule } from 'primeng/dialog';
-
 import { DropdownComponent } from '../dropdown/dropdown.component';
 import { ButtonComponent } from '../button/button.component';
 import { SharedService } from '../../service/shared.service';
@@ -58,6 +57,7 @@ export class TableComponent {
         this.loggedInUserType = this.sharedSvc.getLoggedInUserType();
         this.showDelete = this.sharedSvc.getUserTypePermissions(this.loggedInUserType, this.pageType)?.delete;
         console.log(this.showDelete)
+        this.addRemoveClass();
     }
 
     getRows() {
@@ -178,7 +178,17 @@ export class TableComponent {
         return count;
     }
 
+    addRemoveClass(){
+        // getElementsByClassName or getElementsByTagName
+        document.getElementsByTagName('testing')[0].classList.add('providerMakeChanges');
+        setTimeout(()=>{
+          document.getElementsByTagName('body')[0].classList.remove('providerMakeChanges');
+        }, 5000)
+      }
+
     onClickCell(data: any) {
         this.selectedCellId = data._id;
+       
+       // this.document.getElementById('testing').classList.add('newClassName');
     }
 }
