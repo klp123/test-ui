@@ -30,6 +30,7 @@ export class CardComponent {
   @Output() onGlobalSearch: any = new EventEmitter();
   @Output() onClickAdd: any = new EventEmitter();
   @Output() onClickExport: any = new EventEmitter();
+  @Output() onClickImport: any = new EventEmitter();
   @Output() resetFilters: any = new EventEmitter();
   
   searchStr: any;
@@ -79,6 +80,10 @@ export class CardComponent {
 
   onClickExportBtn() {
     this.onClickExport.emit();
+  }
+
+  onClickImportBtn() {
+    this.onClickImport.emit();
   }
 
   onApplyCustomDateFilter() {

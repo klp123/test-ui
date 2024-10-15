@@ -42,6 +42,10 @@ export class SubmissionService {
     return userCodes[type];
   }
 
+  fileUpload(toUpdateData: any): any {
+    return this.http.post<any>(this.apiUrl + 'submission/upload', toUpdateData);
+  }
+
   openAddConsultant() {
     this.addConsultant$.next(true);
   }

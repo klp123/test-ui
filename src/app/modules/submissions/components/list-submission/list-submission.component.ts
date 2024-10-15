@@ -20,6 +20,7 @@ export class ListSubmissionComponent implements OnInit {
   showAddSubmisson = false;
   showNotes = false;
   isLoading = false
+  showImportDialog = false;
   showAddConsultantOrVendor = false;
   subModalName = 'Consultant';
   filters: any;
@@ -171,9 +172,12 @@ export class ListSubmissionComponent implements OnInit {
   downloadExcel() {
     this.showHideLoader();
     this.filters.type = 'submissions';
-    this.sharedSvc.downloadExcel(this.filters);
+    this.sharedSvc.downloadExcel(this.filters, 'getAll', 'reports.xlsx');
     this.showHideLoader();
-    
+  }
+
+  onClickImport() {
+    this.showImportDialog = true;
   }
 
   onSubmitForm() {
@@ -181,7 +185,7 @@ export class ListSubmissionComponent implements OnInit {
     this.getSubmissions({});
   }
 
-  getSubmissions(filters: any) {
+  getSubmissions(filters?: any) {
     this.filters = filters;
     this.submissionService.getAllSubmissions(filters).subscribe(
       (response: any) => {
@@ -238,6 +242,22 @@ export class ListSubmissionComponent implements OnInit {
   addNew() {
     this.showAddSubmisson = true;
   }
+
+  onUploadImportData(event: any) {
+    this.showHideLoader();
+    this.submissionService.fileUpload(event).subscribe((response: any) => {
+      if (response && response.status_code === 0) {
+        this.sharedSvc.downloadExcel(this.filters, 'downloadImportStatus', 'submissions-status.xlsx');
+        this.showHideLoader();
+        this.getSubmissions({});
+      } else if (response && response.status_code === 1) {
+        this.showHideLoader();
+      }
+    }, (error: any) => {
+      this.showHideLoader();
+      // this.updateMessage('error', 'Something went wrong');
+    });
+  };
 
   getTableConfigs() {
     this.sharedSvc.getTableHeaders('submission/submission').subscribe((data: any) => {

@@ -26,6 +26,7 @@ import { DialogComponent } from '../shared/components/dialog/dialog.component';
 import { CardComponent } from '../shared/components/card/card.component';
 import { DropdownComponent } from '../shared/components/dropdown/dropdown.component';
 import { TimelineComponent } from '../shared/components/timeline/timeline.component';
+import { UploadComponent } from '../shared/components/upload/upload.component';
 import { ConsultantsModule } from '../consultants/consultants.module';
 import { VendorsModule } from '../vendors/vendors.module';
 import { SpeedDialModule } from 'primeng/speeddial';
@@ -67,7 +68,8 @@ import { SubMenu2Component } from "../shared/components/sub-menu2/sub-menu2.comp
     AddActionsComponent,
     ToastrModule.forRoot(), 
     SpinnerComponent,
-    SubMenu2Component
+    SubMenu2Component,
+    UploadComponent
   ],
   providers: [provideHttpClient(), {
     provide: HTTP_INTERCEPTORS,

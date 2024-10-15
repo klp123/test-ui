@@ -18,7 +18,7 @@ import { MultiSelectModule } from 'primeng/multiselect';
     selector: 'app-table',
     templateUrl: './table.component.html',
     styleUrl: './table.component.scss',
-    imports: [TableModule, DialogModule, TimelineComponent, ToolbarModule, ButtonComponent, ButtonModule, FormsModule, CommonModule, TagModule, DropdownComponent,OverlayPanelModule,MultiSelectModule],
+    imports: [TableModule, DialogModule, TimelineComponent, ToolbarModule, ButtonComponent, ButtonModule, FormsModule, CommonModule, TagModule, DropdownComponent, OverlayPanelModule, MultiSelectModule],
     standalone: true
 })
 
@@ -49,7 +49,7 @@ export class TableComponent {
     actionValues: any = [
         { name: 'Edit', code: 'edit' },
         { name: 'Delete', code: 'delete' }];
-        expandedRows = {};
+    expandedRows = {};
 
     constructor(private sharedSvc: SharedService) { }
 
@@ -61,7 +61,7 @@ export class TableComponent {
     }
 
     getRows() {
-        
+
     }
 
     ngOnChanges() {
@@ -72,21 +72,21 @@ export class TableComponent {
         this.onGlobalSearch.emit(this.searchString);
     }
 
-    onSelectColumns(event: any){
+    onSelectColumns(event: any) {
         const index = this.selectedColumns.findIndex((col: any) => col.name === event?.itemValue?.header);
         if (index !== -1) {
-          this.selectedColumns.splice(index, 1);
+            this.selectedColumns.splice(index, 1);
         } else {
-          this.selectedColumns.push({name: event?.itemValue?.header, code: event.itemValue?.header});
-        }      
+            this.selectedColumns.push({ name: event?.itemValue?.header, code: event.itemValue?.header });
+        }
         this.filterData();
     }
 
     filterData(): void {
-        // this.data = this.data.filter((item: any) => {
-        //   return this.selectedColumns.every((column: any) => item[column.field] !== undefined);
-        // });
-      }
+        this.data = this.data.filter((item: any) => {
+            return this.selectedColumns.every((column: any) => item[column.field] !== undefined);
+        });
+    }
 
     getStatusSeverity(status: string) {
         switch (status) {
@@ -96,7 +96,7 @@ export class TableComponent {
                 return 'success';
             case 'CANCELLED':
                 return 'danger';
-            default: 
+            default:
                 return 'danger';
         }
     }
@@ -116,14 +116,14 @@ export class TableComponent {
         } else if (event === 'confirmDelete') {
             this.showDeleteConfirmation = false;
             data = JSON.parse(JSON.stringify(this.actionData));
-        } 
+        }
         this.selectedId = data._id;
         let dataVal = this.prepareEmitData(data, event);
         this.selectedActionEmitter.emit(dataVal)
     }
 
     prepareEmitData(data: any, event: string) {
-        let dataVal = { 'id': data._id, action: event, statusTimeLine: data.statusTimeLine , timelineData: data.statusTimeLine, notes: data.notes, data: data };
+        let dataVal = { 'id': data._id, action: event, statusTimeLine: data.statusTimeLine, timelineData: data.statusTimeLine, notes: data.notes, data: data };
         return dataVal;
     }
 

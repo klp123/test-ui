@@ -144,11 +144,11 @@ export class SharedService {
       return this.loader.load();
     }
 
-    downloadExcel(payload: any) {
-      const url = 'http://localhost:5000/submission/getAll';
+    downloadExcel(payload: any, urlVal: any, fileName: any) {
+      const url = 'http://localhost:5000/submission/' + urlVal;
       payload.downloadExcel = true;
       this.http.post(url, payload, { responseType: 'blob' }).subscribe((blob: any) => {
-        saveAs(blob, 'report.xlsx');
+        saveAs(blob, fileName);
       }, error => {
         console.error('Error downloading file', error);
       });

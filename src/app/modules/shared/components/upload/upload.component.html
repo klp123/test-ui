@@ -1,0 +1,16 @@
+<p-fileUpload 
+    name="demo[]" 
+    (onUpload)="onUpload($event)" 
+    (onSelect)="onSelect($event)"
+    (onRemove)="onRemove()"
+    [multiple]="false" 
+    accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+    maxFileSize="1000000">
+        <ng-template pTemplate="content">
+            <ul *ngIf="uploadedFiles.length">
+                <li *ngFor="let file of uploadedFiles">
+                    {{ file.name }} - {{ file.size }} bytes
+                </li>
+            </ul>
+        </ng-template>
+</p-fileUpload>

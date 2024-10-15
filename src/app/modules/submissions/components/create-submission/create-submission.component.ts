@@ -45,6 +45,7 @@ export class CreateSubmissionComponent {
       jobLocation: ['', Validators.required],
       recruiterName: [''],
       recruiterId: [''],
+      recruiterCompanyId: [''],
       consultantResetName: [''],
       vendorResetName: [''],
       companyResetName: ['']
@@ -74,6 +75,7 @@ export class CreateSubmissionComponent {
     this.showHideLoader();
     this.submitClicked = true;
     if (this.submissionForm.valid) {
+      this.removeResetFields();
       this.submissionService.createSubmission(this.prepareSubmissionPayload()).subscribe((response: any) => {
         if (response && response.status_code === 0) {
           this.updateMessage('success', 'Submission created successfully');
@@ -153,10 +155,17 @@ export class CreateSubmissionComponent {
       vendorId: this.vendorId,
       recruiterName: this.sharedSvc.getLoggedInUserName(),
       recruiterId: this.sharedSvc.getLoggedInUserId(),
+      vendorCompanyId: this.filteredCompanyData[0].id,
       createdBy: this.sharedSvc.getLoggedInUserId()
     }
 
     return payload;
+  }
+
+  removeResetFields() {
+    this.submissionForm.get('consultantResetName')?.setValue('');
+    this.submissionForm.get('vendorResetName')?.setValue('');
+    this.submissionForm.get('companyResetName')?.setValue('');
   }
 
   onSearchConsultant(event: any) {

@@ -2,7 +2,7 @@
     <div class="col-12 md:col-12 lg:col-12 ">
         <!-- <app-sub-menu2></app-sub-menu2> -->
         <app-card [groupByValues]="groupByValues" (selectedDateRange)="selectedDateRange($event)"
-            (onClickAdd)="addNew()" (onClickExport)="downloadExcel()" (resetFilters)="resetFilters()">
+            (onClickAdd)="addNew()" (onClickExport)="downloadExcel()"  (onClickImport)="onClickImport()" (resetFilters)="resetFilters()">
         </app-card>
     </div>
 </div>
@@ -13,6 +13,10 @@
     <div class="text-right">
         <app-button [label]="'Update'" [rounded]="false" severity="primary" (click)="updateSubmission('notes')" />
     </div>
+</p-dialog>
+
+<p-dialog header="Notes" [modal]="true" [(visible)]="showImportDialog" class="submission submission-notes" >
+    <app-upload (fileUploaded)="onUploadImportData($event)"></app-upload>
 </p-dialog>
 
 <p-dialog header="Update Submission Status" [modal]="true" [(visible)]="showSubmissionUpdate">
