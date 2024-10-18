@@ -21,6 +21,8 @@ export class ListSubmissionComponent implements OnInit {
   showNotes = false;
   isLoading = false
   showImportDialog = false;
+  tableWidthProp = 12;
+  timeLineWidthProp = 0;
   showAddConsultantOrVendor = false;
   subModalName = 'Consultant';
   filters: any;
@@ -107,6 +109,13 @@ export class ListSubmissionComponent implements OnInit {
       this.showNotes = true;
       this.notes = event.notes;
     }
+    this.tableWidthProp = 8;
+    this.timeLineWidthProp = 4;
+  }
+
+  onCloseTimeLine() {
+    this.tableWidthProp = 12;
+    this.timeLineWidthProp = 0;
   }
 
   selectSubStatus(status: string) {
@@ -158,6 +167,7 @@ export class ListSubmissionComponent implements OnInit {
     this.groupBy = '';
     this.getSubmissions({});
   }
+
 
   onGlobalSearch(searchStr: string) {
     this.getSubmissions({ 'searchStr': searchStr });

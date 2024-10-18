@@ -84,6 +84,27 @@ app-timeline {
   }
 }
 
+.timeline-div {
+  position: relative;
+}
+
+.hideProp {
+  display: none;
+}
+
+.timeLineClose {
+  color: black;
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.showProp {
+  display: block;
+}
+
 .session-update-popup {
   width: 35em !important;
   height: 20em !important;
@@ -103,47 +124,54 @@ app-timeline {
   border-bottom: 1px solid #ccc !important;
 }
 
-.timeline-bgm{
+.timeline-bgm {
+  height: 74vh;
   background-color: #fff !important;
-    border-radius: 10px;
-     overflow-y: scroll;
-    padding: 10px 0px 10px 10px;
+  border-radius: 10px;
+  overflow-y: scroll;
+  padding: 10px 0px 10px 10px;
 }
-.notes-submission-textarea{
+
+.notes-submission-textarea {
   border: 1px solid #ccc;
   border-radius: 5px;
   width: 100%;
 }
 
-.items-container{
+.items-container {
   padding: 1rem 0rem 0rem 1rem !important;
 }
 
 .flex-container {
   display: flex;
   justify-content: center;
-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
-.flex-container > div {
+.flex-container>div {
   margin: 0px 0px 0px 20px;
   text-align: center;
-  font-size: 20px; 
+  font-size: 20px;
 }
-.pzero{
+
+.pzero {
   padding: 0px;
 }
-:host ::ng-deep .col-right{
+
+:host ::ng-deep .col-right {
   padding: 1rem !important;
 }
+
 @media (max-width: 499px) {
   app-timeline {
     margin-top: 0rem;
   }
+
   .position-top {
     padding-top: 11em;
     padding-bottom: 1em;
   }
+
   .submission-dialog .p-dialog .p-dialog-conten {
     padding: 0px 0rem 2rem 2.5rem !important;
   }
@@ -199,9 +227,9 @@ flex-wrap: wrap;
   :host ::ng-deep .p-multiselect {
     background: transparent !important;
     width: 300px;
-}
+  }
 
-:host ::ng-deep .p-multiselect:hover {
+  :host ::ng-deep .p-multiselect:hover {
     border: 1px solid #ccc !important;
-}
+  }
 }

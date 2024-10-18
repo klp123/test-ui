@@ -1,57 +1,23 @@
-
-
-    
-
-<!-- <div class="grid position-top">
-
-    <div class="col-12 md:col-2 lg:col-2">
-        <p class="submission-text-2">Submission</p>
-   
-    </div>
-    <div class="col-12 md:col-2 lg:col-2">
-       
-        <p class="submission-text-2">Consultants</p>
-      
-    </div>
-    <div class="col-12 md:col-2 lg:col-2">
-       
-        <p class="submission-text-2">Recruiters</p>
-      
-    </div>
-    <div class="col-12 md:col-2 lg:col-2">                        
-        <p class="submission-text-2">Vendors</p>
-     
-    </div>
-
-    <div class="col-12 md:col-2 lg:col-2">
-       
-        <p class="submission-text-2">Emails</p>
-     
-    </div>
-
-    <div class="col-12 md:col-1 lg:col-1"></div>
-</div> -->
-
 <div class="grid">
 
 
     <div class="col-12 md:col-12 lg:col-12 ">
-        <!-- <app-sub-menu2></app-sub-menu2> -->
         <app-card [groupByValues]="groupByValues" (selectedDateRange)="selectedDateRange($event)"
-            (onClickAdd)="addNew()" (onClickExport)="downloadExcel()"  (onClickImport)="onClickImport()" (resetFilters)="resetFilters()">
+            (onClickAdd)="addNew()" (onClickExport)="downloadExcel()" (onClickImport)="onClickImport()"
+            (resetFilters)="resetFilters()">
         </app-card>
     </div>
 </div>
 
-<p-dialog header="Notes" [modal]="true" [(visible)]="showNotes" class="submission submission-notes" >
-    <textarea rows="10"  pInputTextarea [(ngModel)]="notes" class="my-3">
+<p-dialog header="Notes" [modal]="true" [(visible)]="showNotes" class="submission submission-notes">
+    <textarea rows="10" pInputTextarea [(ngModel)]="notes" class="my-3">
     </textarea>
     <div class="text-right">
         <app-button [label]="'Update'" [rounded]="false" severity="primary" (click)="updateSubmission('notes')" />
     </div>
 </p-dialog>
 
-<p-dialog header="Notes" [modal]="true" [(visible)]="showImportDialog" class="submission submission-notes" >
+<p-dialog header="Notes" [modal]="true" [(visible)]="showImportDialog" class="submission submission-notes">
     <app-upload (fileUploaded)="onUploadImportData($event)"></app-upload>
 </p-dialog>
 
@@ -85,7 +51,8 @@
         </div>
     </div>
     <div class="">
-        <app-button [label]="'Update'" [rounded]="false" severity="primary" (click)="updateSubmission('status')"  class="submission--update-btn"/>
+        <app-button [label]="'Update'" [rounded]="false" severity="primary" (click)="updateSubmission('status')"
+            class="submission--update-btn" />
     </div>
 </p-dialog>
 
@@ -95,7 +62,8 @@
     </div>
 </p-dialog>
 
-<p-dialog header="Create {{subModalName}}" [modal]="true" [(visible)]="showAddConsultantOrVendor" class="submission-dialog sub-dialog">
+<p-dialog header="Create {{subModalName}}" [modal]="true" [(visible)]="showAddConsultantOrVendor"
+    class="submission-dialog sub-dialog">
     <div class="add-submission">
         <app-create-consultant *ngIf="subModalName === 'Consultant'"></app-create-consultant>
         <app-create-vendor *ngIf="subModalName === 'Vendor'"></app-create-vendor>
@@ -103,14 +71,18 @@
 </p-dialog>
 <app-spinner [isLoading]="isLoading"></app-spinner>
 <div class="grid">
-    <div class="col-12 md:col-8 lg:col-8">
+    <div class="col-12 md:col-{{tableWidthProp}} lg:col-{{tableWidthProp}}">
         <app-table [columns]="columns" [data]="data" [rows]="rows" (selectedActionEmitter)="onSelectAction($event)"
-    [groupBy]="groupBy" [table]="'submission'" [pageType]="'submission'" [groupByValues]="groupByValues" [statusTimeLine]="statusTimeLine" [tableWidth]="tableWidth" [submissionsCount]="submissionsCount" (onGlobalSearch)="onGlobalSearch($event)" ></app-table>
+            [groupBy]="groupBy" [table]="'submission'" [pageType]="'submission'" [groupByValues]="groupByValues"
+            [statusTimeLine]="statusTimeLine" [tableWidth]="tableWidth" [submissionsCount]="submissionsCount"
+            (onGlobalSearch)="onGlobalSearch($event)"></app-table>
 
     </div>
-    <div class="col-12 md:col-4 lg:col-4 pzero">
+    <div class="col-12 md:col-{{timeLineWidthProp}} lg:col-{{timeLineWidthProp}} pzero timeline-div"
+        [ngClass]="{'hideProp': timeLineWidthProp === 0, 'showProp': timeLineWidthProp != 0}">
+        <i class="pi pi-times timeLineClose" (click)="onCloseTimeLine()"></i>
         <div class="timeline-bgm">
-        <app-timeline ></app-timeline>
+            <app-timeline></app-timeline>
+        </div>
     </div>
-    </div>
-    </div>
+</div>
