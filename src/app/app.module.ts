@@ -16,8 +16,8 @@ import { SidebarComponent } from './modules/shared/components/sidebar/sidebar.co
 import { HeaderComponent } from './modules/shared/components/header/header.component';
 import { HttpInterceptorService } from './interceptors/http.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-
-@NgModule({
+import {SubMenuComponent} from "./modules/shared/components/sub-menu/sub-menu.component";
+ @NgModule({
   declarations: [
     AppComponent
   ],
@@ -33,7 +33,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     ButtonComponent,
     SidebarComponent,
     HeaderComponent,
-    DropdownComponent
+    DropdownComponent,
+    SubMenuComponent
   ],
   providers:[importProvidersFrom([BrowserAnimationsModule]),
   {

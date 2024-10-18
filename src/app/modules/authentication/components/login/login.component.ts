@@ -35,34 +35,34 @@ export class LoginComponent {
   onSubmit() {
     this.submitClicked = true;
     this.router.navigateByUrl('/submissions');
-    if (this.loginForm.valid) {
-      this.authSvc.login(this.loginForm.value).subscribe((response: any) => {
-        if (response && response.status_code === 0) {
-          localStorage.setItem('userId', response.user?._id);
-          this.resetForm();
-          if (response.user?.isPasswordUpdated === false) {
-            this.showLogin = false;
-            setTimeout(() => {
-              location.reload();
-            }, 3000);
-            this.router.navigateByUrl('/auth/reset-password');
-          } else {
-            this.updateMessage('success', 'Login Successfull');
-            localStorage.setItem('userLoggedIn', 'true');
-            localStorage.setItem('userData', JSON.stringify(response.user));
-            localStorage.setItem('userId', JSON.stringify(response.user?._id));
-            this.router.navigateByUrl('/submissions');
-            this.sharedSvc.logInUser(true);
-          }
-        } else if (response && response.status_code === 1) {
-          this.updateMessage('error', response.message);
-          this.errorMessage = response.message;
-        }
-      },
-      error => {
-        console.error('Error fetching data:', error);
-      });
-    }
+    // if (this.loginForm.valid) {
+    //   this.authSvc.login(this.loginForm.value).subscribe((response: any) => {
+    //     if (response && response.status_code === 0) {
+    //       localStorage.setItem('userId', response.user?._id);
+    //       this.resetForm();
+    //       if (response.user?.isPasswordUpdated === false) {
+    //         this.showLogin = false;
+    //         setTimeout(() => {
+    //           location.reload();
+    //         }, 3000);
+    //         this.router.navigateByUrl('/auth/reset-password');
+    //       } else {
+    //         this.updateMessage('success', 'Login Successfull');
+    //         localStorage.setItem('userLoggedIn', 'true');
+    //         localStorage.setItem('userData', JSON.stringify(response.user));
+    //         localStorage.setItem('userId', JSON.stringify(response.user?._id));
+    //         this.router.navigateByUrl('/submissions');
+    //         this.sharedSvc.logInUser(true);
+    //       }
+    //     } else if (response && response.status_code === 1) {
+    //       this.updateMessage('error', response.message);
+    //       this.errorMessage = response.message;
+    //     }
+    //   },
+    //   error => {
+    //     console.error('Error fetching data:', error);
+    //   });
+    // }
   }
 
   updatePassword() {

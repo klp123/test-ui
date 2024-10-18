@@ -10,7 +10,7 @@ const routes: Routes = [
   {
     path: 'submissions',
     loadChildren: () => import('././modules/submissions/submissions.module').then(m => m.SubmissionsModule),
-    canActivate: [AuthGuard]
+    // canActivate: [AuthGuard]
   },
   {
     path: 'consultants',
