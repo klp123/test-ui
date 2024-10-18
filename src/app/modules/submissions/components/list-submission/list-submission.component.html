@@ -1,4 +1,40 @@
-<div class="grid position-top ">
+
+
+    
+
+<!-- <div class="grid position-top">
+
+    <div class="col-12 md:col-2 lg:col-2">
+        <p class="submission-text-2">Submission</p>
+   
+    </div>
+    <div class="col-12 md:col-2 lg:col-2">
+       
+        <p class="submission-text-2">Consultants</p>
+      
+    </div>
+    <div class="col-12 md:col-2 lg:col-2">
+       
+        <p class="submission-text-2">Recruiters</p>
+      
+    </div>
+    <div class="col-12 md:col-2 lg:col-2">                        
+        <p class="submission-text-2">Vendors</p>
+     
+    </div>
+
+    <div class="col-12 md:col-2 lg:col-2">
+       
+        <p class="submission-text-2">Emails</p>
+     
+    </div>
+
+    <div class="col-12 md:col-1 lg:col-1"></div>
+</div> -->
+
+<div class="grid">
+
+
     <div class="col-12 md:col-12 lg:col-12 ">
         <!-- <app-sub-menu2></app-sub-menu2> -->
         <app-card [groupByValues]="groupByValues" (selectedDateRange)="selectedDateRange($event)"
@@ -40,6 +76,12 @@
                     severity="{{subStatus === 'failed' ? 'primary' : 'secondary'}}" class="mr-2 "
                     (click)="selectSubStatus('failed')" />
             </div>
+        </div>
+
+        <div>
+            <textarea class="notes-submission-textarea" rows="8">
+
+            </textarea>
         </div>
     </div>
     <div class="">

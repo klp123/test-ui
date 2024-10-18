@@ -37,7 +37,7 @@
 :host ::ng-deep .consultant-dialog .p-dialog {
     width: 78vw;
     height: auto;
-    left: 9vw;
+    
 }
 
 :host ::ng-deep .consultant-dialog .p-dialog .p-dialog-content {
@@ -52,7 +52,7 @@
 :host ::ng-deep .submission-notes .p-dialog {
     width: 50%;
     height: auto;
-    left: 9vw;
+    // left: 9vw;
   }
 @media (max-width: 499px) {
    
