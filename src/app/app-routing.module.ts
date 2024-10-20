@@ -25,7 +25,7 @@ const routes: Routes = [
   {
     path: 'vendors',
     loadChildren: () => import('././modules/vendors/vendors.module').then(m => m.VendorsModule),
-     canActivate: [AuthGuard]
+    //  canActivate: [AuthGuard]
   },
   {
     path: 'email',

@@ -61,7 +61,7 @@ export class CreateVendorComponent implements OnInit {
   ngOnChanges(): void {
     if (this.editData && this.editData.email) {
       this.editForm = true;
-      this.vendorForm.controls['email'].disable();
+      // this.vendorForm.controls['email'].disable();
       this.patchForm();
     } else {
      // this.resetForm();

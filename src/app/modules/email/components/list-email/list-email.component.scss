@@ -1,0 +1,71 @@
+.clanedar-layout{
+    display: flex;
+    justify-content: end;
+    margin-bottom: 10px;
+  }
+  
+  :host ::ng-deep .p-button.p-button-icon-only {
+      width: 2.5rem !important;
+      padding: 0.75rem 0;
+      height: 2.1em !important;
+  }
+  
+  .position-top {
+    padding-top: 4.5em;
+    padding-bottom: 1em;
+  }
+  :host ::ng-deep .p-dropdown{
+    width: 100%;
+  }
+
+  :host ::ng-deep .p-dialog-header {
+    padding: 0.5rem 1.5rem;
+    border-bottom: 1px solid #ccc
+  }
+  
+  .p-button.p-button-secondary, .p-button-group.p-button-secondary > .p-button, .p-splitbutton.p-button-secondary > .p-button {
+    color: black !important;
+    background-color: white !important;
+  }
+
+
+:host ::ng-deep .vendor-dialog .p-dialog {
+    width: 78vw;
+    height: auto;
+    // left: 9vw;
+}
+
+:host ::ng-deep .Vendor-dialog .p-dialog .p-dialog-content {
+    padding: 0px 0rem 2rem 2.5rem;
+    overflow-x: hidden;
+}
+
+:host ::ng-deep .vendor-dialog .add-vendor {
+    margin-top: 3em;
+}
+
+
+@media (max-width: 499px) {
+    :host ::ng-deep .vendor-dialog .p-dialog {
+        width: 90vw;
+        height: 100vh;
+        left: 0vw;
+    }
+
+    :host ::ng-deep .p-dialog-header {
+        padding: 0.5rem 2rem !important;
+    }
+
+    :host ::ng-deep .vendor-dialog .p-dialog .p-dialog-content {
+        padding: 2rem 4rem;
+        overflow-x: hidden;
+    }
+
+    .p-zero {
+        padding: 5px 2px !important;
+    }
+
+    :host ::ng-deep .vendor-dialog .add-vendor {
+        margin-top: 0em;
+    }
+}

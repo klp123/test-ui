@@ -84,7 +84,7 @@
         [ngClass]="{'hideProp': timeLineWidthProp === 0, 'showProp': timeLineWidthProp != 0}">
         <i class="pi pi-times timeLineClose" (click)="onCloseTimeLine()"></i>
         <div class="timeline-bgm">
-            <app-timeline [timeLineData]="timeLineViewData"></app-timeline>
+            <app-timeline [timeLineData]="timeLineViewData" [selectedConsultant]="selectedConsultant"></app-timeline>
         </div>
     </div>
 </div>

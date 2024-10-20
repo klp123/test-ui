@@ -18,7 +18,8 @@ export class ListSubmissionComponent implements OnInit {
   showSubmissionUpdate = false;
   showAddSubmisson = false;
   showNotes = false;
-  isLoading = false
+  isLoading = false;
+  selectedConsultant = '';
   showImportDialog = false;
   statusUpdateTime: any;
   tableWidthProp = 12;
@@ -115,6 +116,7 @@ export class ListSubmissionComponent implements OnInit {
   }
 
   showTimeLineModal(data: any) {
+    this.selectedConsultant = data.consultantName;
     this.prepareToViewTimeLine(data.statusTimeLine);
     this.tableWidthProp = 8;
     this.timeLineWidthProp = 4;

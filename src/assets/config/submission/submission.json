@@ -2,7 +2,7 @@
     "columns": [
       {
         "header": "Actions",
-        "headerWidth": "5%",
+        "headerWidth": "3%",
         "field": "",
         "type": " ",
         "dataFilter": " ",
@@ -10,7 +10,7 @@
       },
       {
         "header": "Created Date",
-        "headerWidth": "6%",
+        "headerWidth": "5%",
         "field": "createdAt",
         "dataFilter": "date",
         "type": " ",
@@ -143,7 +143,7 @@
       "dataFilter": " "
     }
   ],
-  "tableWidth": "132vw",
+  "tableWidth": "130vw",
   "groupByValues": [
     {
       "name": "consultant",

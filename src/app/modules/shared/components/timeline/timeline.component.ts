@@ -13,6 +13,7 @@ import { NgxTimelineModule, NgxTimelineItemPosition } from '@frxjs/ngx-timeline'
 })
 export class TimelineComponent {
  @Input() timeLineData: any;
+ @Input() selectedConsultant!: string;
   date = new Date();
   events: any = [
     { id: 5, description: 'This is the description of the event 5', timestamp: this.date, title: 'Submitted', itemPosition: NgxTimelineItemPosition.ON_LEFT },

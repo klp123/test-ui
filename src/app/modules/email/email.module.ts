@@ -10,10 +10,16 @@ import { EditorModule } from 'primeng/editor';
 import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 import { ToastrModule } from 'ngx-toastr';
 import { SpinnerComponent } from '../shared/components/spinner/spinner.component';
+import { ListEmailComponent } from './components/list-email/list-email.component';
+import { CardModule } from 'primeng/card';
+import { DialogModule } from 'primeng/dialog';
+import { TableComponent } from '../shared/components/table/table.component';
+import { CardComponent } from '../shared/components/card/card.component';
 
 @NgModule({
   declarations: [
-    CreateEmailComponent
+    CreateEmailComponent,
+    ListEmailComponent
   ],
   imports: [
     EmailRoutingModule,
@@ -26,7 +32,11 @@ import { SpinnerComponent } from '../shared/components/spinner/spinner.component
     ReactiveFormsModule,
     AutocompleteLibModule,
     ToastrModule,
-    SpinnerComponent
+    SpinnerComponent,
+    CardModule,
+    DialogModule,
+    TableComponent,
+    CardComponent
   ]
 })
 export class EmailModule { }
