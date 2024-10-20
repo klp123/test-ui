@@ -1,10 +1,10 @@
 <div class="table-top">
   <div class="grid ">
-    <div class="col-12 md:col-4 lg:col-4 padding-input">
+    <div class="col-12 md:col-3 lg:col-3 padding-input">
       <i class="pi pi-search search-icon"></i>
       <input pInputText class="globla-input" placeholder="Global Search" [(ngModel)]="searchString" (ngModelChange)="onSearchGlobal()"/>
     </div>
-    <div class="col-12 md:col-4 lg:col-4 pad-2em">
+    <div class="col-12 md:col-3 lg:col-3 pad-2em">
       <p-multiSelect display="chip" [options]="columns" [(ngModel)]="selectedColumns" optionLabel="header"
         selectedItemsLabel="{0} columns selected" [style]="{'min-width': '100px'}" placeholder="Choose Columns"
         (onChange)="onSelectColumns($event)" />

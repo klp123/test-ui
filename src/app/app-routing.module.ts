@@ -25,12 +25,12 @@ const routes: Routes = [
   {
     path: 'vendors',
     loadChildren: () => import('././modules/vendors/vendors.module').then(m => m.VendorsModule),
-     canActivate: [AuthGuard]
+    //  canActivate: [AuthGuard]
   },
   {
     path: 'email',
     loadChildren: () => import('././modules/email/email.module').then(m => m.EmailModule),
-     canActivate: [AuthGuard]
+    //  canActivate: [AuthGuard]
   },
   { path: '', redirectTo: '/auth', pathMatch: 'full' },
   { path: '**', redirectTo: '/home' }

@@ -104,10 +104,25 @@ app-timeline {
 .showProp {
   display: block;
 }
-
+.session-update-popup .col-12{
+  padding: 5px !important;
+}
+::ng-deep .p-dialog .p-datepicker {
+  z-index: 15000 !important; /* Ensure it's higher than the p-dialog's z-index */
+}
+::ng-deep .p-dialog .session-update-popup .p-datepicker {
+  z-index: 15000 !important; /* Ensure it's higher than the p-dialog's z-index */
+}
 .session-update-popup {
   width: 35em !important;
-  height: 20em !important;
+  height: 27em !important;
+} 
+:host ::ng-deep .session-update-popup .p-inputtext{
+  padding: auto !important;
+}
+
+:host ::ng-deep .session-update-popup .p-calendar {
+  width: 100% !important;
 }
 
 :host ::ng-deep .session-timeline-popup .p-dialog {
