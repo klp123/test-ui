@@ -10,9 +10,8 @@ import { ConsultantService } from "../../../consultants/services/consultant.serv
   selector: "app-list-submission",
   templateUrl: "./list-submission.component.html",
   styleUrls: ["./list-submission.component.scss"], // Corrected here imports: [SubMenu2Component],
- 
-  
 })
+
 export class ListSubmissionComponent implements OnInit {
   @Output() selectedActionEmitter: any = new EventEmitter();
   showTimeline = false;
@@ -21,7 +20,9 @@ export class ListSubmissionComponent implements OnInit {
   showNotes = false;
   isLoading = false
   showImportDialog = false;
+  statusUpdateTime: any;
   tableWidthProp = 12;
+  hoursFormat = "12";
   timeLineWidthProp = 0;
   showAddConsultantOrVendor = false;
   subModalName = 'Consultant';
@@ -30,6 +31,7 @@ export class ListSubmissionComponent implements OnInit {
   subStatus = '';
   submissionId = '';
   tableWidth = '';
+  statusTimeLineNotes = '';
   selectedUpdateVal: string = '';
   data: any = [];
   submissionsCount: any = [];
@@ -38,6 +40,7 @@ export class ListSubmissionComponent implements OnInit {
   groupBy: string = '';
   groupByValues: any =[];
   toUpdateStatusValues: any = [];
+  timeLineViewData: any = [];
   statusTimeLine: any = [];
   items: any = [
     {
@@ -104,11 +107,15 @@ export class ListSubmissionComponent implements OnInit {
       this.showSubmissionUpdate = true;
     } else if (event.action === "view") {
       this.showTimeline = true;
-      this.statusTimeLine = event.timelineData.slice().reverse();
+      this.statusTimeLine = this.prepareToViewTimeLine(event.statusTimeLine);
     } else if (event.action === "notes") {
       this.showNotes = true;
       this.notes = event.notes;
     }
+  }
+
+  showTimeLineModal(data: any) {
+    this.prepareToViewTimeLine(data.statusTimeLine);
     this.tableWidthProp = 8;
     this.timeLineWidthProp = 4;
   }
@@ -136,11 +143,27 @@ export class ListSubmissionComponent implements OnInit {
     this.updateSubmissionById(toUpdateObj);
   }
 
+  prepareToViewTimeLine(timelineData: any) {
+    this.timeLineViewData = [];
+    timelineData.forEach((element: any, index: number) => {
+      let timeLineObj: any = {};
+      timeLineObj.timestamp = new Date(element.timeStamp),
+      timeLineObj.description = element.notes,
+      timeLineObj.title = element.status,
+      timeLineObj.description  = element.subStatus,
+      timeLineObj.itemPosition = index % 2 === 0 ? 'left' : 'right'
+      this.timeLineViewData.push(timeLineObj);
+    });
+    this.timeLineViewData.reverse();
+    return timelineData;
+  }
+
   prepareStatusTimelineUpdateData() {
     let statusTimeLineData = {
       status: this.selectedUpdateVal.toUpperCase(),
       subStatus: this.subStatus.toUpperCase(),
-      timeStamp: new Date()
+      timeStamp: this.statusUpdateTime,
+      notes: this.statusTimeLineNotes
     }
     this.statusTimeLine.push(statusTimeLineData);
     return this.statusTimeLine;

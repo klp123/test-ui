@@ -57,14 +57,6 @@
         "rowDataFilter": " "
       },
       {
-        "header": "Notes",
-        "headerWidth": "6%",
-        "field": "subNotes",
-        "dataFilter": " ",
-        "type": " ",
-        "rowDataFilter": " "
-      },
-      {
         "header": "Vendor Name",
         "headerWidth": "5%",
         "field": "vendorName",
@@ -128,10 +120,6 @@
     },
     {
       "name": "subStatus",
-      "dataFilter": " "
-    },
-    {
-      "name": "subNotes",
       "dataFilter": " "
     },
     {
