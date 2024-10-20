@@ -33,6 +33,7 @@ import { SpeedDialModule } from 'primeng/speeddial';
 import { HttpInterceptorService } from '../../interceptors/http.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SubMenu2Component } from "../shared/components/sub-menu2/sub-menu2.component";
+import { CalendarModule } from 'primeng/calendar';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { SubMenu2Component } from "../shared/components/sub-menu2/sub-menu2.comp
     ToastrModule.forRoot(), 
     SpinnerComponent,
     SubMenu2Component,
-    UploadComponent
+    UploadComponent,
+    CalendarModule
   ],
   providers: [provideHttpClient(), {
     provide: HTTP_INTERCEPTORS,

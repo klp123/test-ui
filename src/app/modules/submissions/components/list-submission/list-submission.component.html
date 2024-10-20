@@ -1,6 +1,4 @@
 <div class="grid">
-
-
     <div class="col-12 md:col-12 lg:col-12 ">
         <app-card [groupByValues]="groupByValues" (selectedDateRange)="selectedDateRange($event)"
             (onClickAdd)="addNew()" (onClickExport)="downloadExcel()" (onClickImport)="onClickImport()"
@@ -27,6 +25,11 @@
             <app-dropdown [dropDownValues]="toUpdateStatusValues"
                 (selectedValueEmitter)="onSelectUpdateValues($event)"></app-dropdown>
         </div>
+        <p-calendar 
+            inputId="calendar-12h" 
+            [(ngModel)]="statusUpdateTime" 
+            [showTime]="true" 
+            [hourFormat]="hoursFormat" />
         <div class="col-12 md:col-12 lg:col-12">
             <div *ngIf="updateValuesList.indexOf(selectedUpdateVal) > -1">
                 <app-button [label]="'Scheduled'" [rounded]="true"
@@ -45,8 +48,7 @@
         </div>
 
         <div>
-            <textarea class="notes-submission-textarea" rows="8">
-
+            <textarea class="notes-submission-textarea" rows="8" [(ngModel)]="statusTimeLineNotes" >
             </textarea>
         </div>
     </div>
@@ -75,14 +77,14 @@
         <app-table [columns]="columns" [data]="data" [rows]="rows" (selectedActionEmitter)="onSelectAction($event)"
             [groupBy]="groupBy" [table]="'submission'" [pageType]="'submission'" [groupByValues]="groupByValues"
             [statusTimeLine]="statusTimeLine" [tableWidth]="tableWidth" [submissionsCount]="submissionsCount"
-            (onGlobalSearch)="onGlobalSearch($event)"></app-table>
+            (onGlobalSearch)="onGlobalSearch($event)" (emitTimeLine)="showTimeLineModal($event)"></app-table>
 
     </div>
     <div class="col-12 md:col-{{timeLineWidthProp}} lg:col-{{timeLineWidthProp}} pzero timeline-div"
         [ngClass]="{'hideProp': timeLineWidthProp === 0, 'showProp': timeLineWidthProp != 0}">
         <i class="pi pi-times timeLineClose" (click)="onCloseTimeLine()"></i>
         <div class="timeline-bgm">
-            <app-timeline></app-timeline>
+            <app-timeline [timeLineData]="timeLineViewData"></app-timeline>
         </div>
     </div>
 </div>

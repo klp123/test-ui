@@ -40,7 +40,7 @@
             <app-button *ngIf="showDelete" [icon]="'trash'" [severity]="'secondary'"
               (click)="onSelectAction(data, 'delete')" class="mr-2 trash-btn"></app-button>
           </td>
-          <td pEditableColumnField="code" *ngFor="let row of rows" >
+          <td pEditableColumnField="code" *ngFor="let row of rows" (click)="onRowClick(data)">
             <p-cellEditor>
               <ng-template pTemplate="output">
                 {{ data[row.name] }}

@@ -34,6 +34,7 @@ export class TableComponent {
     @Input() statusTimeLine: any;
     @Input() pageType: any;
     @Output() selectedActionEmitter: any = new EventEmitter();
+    @Output() emitTimeLine: any = new EventEmitter();
     @Output() onGlobalSearch: any = new EventEmitter();
     metaKey: boolean = true;
     selectedId: string = '';
@@ -188,7 +189,10 @@ export class TableComponent {
 
     onClickCell(data: any) {
         this.selectedCellId = data._id;
-       
-       // this.document.getElementById('testing').classList.add('newClassName');
+        
+    }
+
+    onRowClick(data: any) {
+        this.emitTimeLine.emit(data);
     }
 }
