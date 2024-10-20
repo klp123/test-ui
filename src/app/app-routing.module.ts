@@ -30,7 +30,7 @@ const routes: Routes = [
   {
     path: 'email',
     loadChildren: () => import('././modules/email/email.module').then(m => m.EmailModule),
-     canActivate: [AuthGuard]
+    //  canActivate: [AuthGuard]
   },
   { path: '', redirectTo: '/auth', pathMatch: 'full' },
   { path: '**', redirectTo: '/home' }

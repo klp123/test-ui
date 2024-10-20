@@ -9,9 +9,11 @@
       padding: 0.75rem 0;
       height: 2.1em !important;
   }
-  
+  .filter-right{
+    margin-bottom: 0px !important;
+  }
   .position-top {
-    padding-top: 4.5em;
+    padding-top: 0.5em;
     padding-bottom: 1em;
   }
   :host ::ng-deep .p-dropdown{
