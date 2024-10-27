@@ -45,10 +45,11 @@
  -->
 
 <div class="filter-right">
-  <app-button class="filter-btn" [label]="'Filters'" [rounded]="false" severity="primary" icon="pi pi-filter" iconPos="right" (click)="op.toggle($event)"  />
+  <app-button class="filter-btn" [label]="'Assign'" [rounded]="false" severity="primary" icon="pi pi-plus" iconPos="right"  (click)="onClickAssignBtn()"/>
+  <app-button *ngIf="pageType !== 'email'" class="filter-btn" [label]="'Filters'" [rounded]="false" severity="primary" icon="pi pi-filter" iconPos="right" (click)="op.toggle($event)"  />
   <app-button class="filter-btn" [label]="'Add New'" [rounded]="false" severity="primary" icon="pi pi-plus" iconPos="right"  (click)="onClickAddBtn()"/>
-  <app-button class="filter-btn" [label]="'Export'" [rounded]="false" severity="primary"  icon="pi pi-file-export" iconPos="right" (click)="onClickExportBtn()"/>
-  <app-button class="filter-btn" [label]="'Import'" [rounded]="false" severity="primary"  icon="pi pi-file-import" iconPos="right" (click)="onClickImportBtn()"/>
+  <app-button *ngIf="pageType !== 'email'" class="filter-btn" [label]="'Export'" [rounded]="false" severity="primary"  icon="pi pi-file-export" iconPos="right" (click)="onClickExportBtn()"/>
+  <app-button *ngIf="pageType === 'submission'" class="filter-btn" [label]="'Import'" [rounded]="false" severity="primary"  icon="pi pi-file-import" iconPos="right" (click)="onClickImportBtn()"/>
 </div>
 
 <p-overlayPanel #op  class="overlay-popup">

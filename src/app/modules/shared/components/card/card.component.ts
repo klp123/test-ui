@@ -25,6 +25,7 @@ export class CardComponent {
   private searchSubject = new Subject<string>();
   @Input() groupByValues: any = [];
   @Input() title: any = '';
+  @Input() pageType: any = '';
   @Output() customDatesApplied: any = new EventEmitter();
   @Output() selectedDateRange: any = new EventEmitter();
   @Output() onGlobalSearch: any = new EventEmitter();
@@ -32,6 +33,8 @@ export class CardComponent {
   @Output() onClickExport: any = new EventEmitter();
   @Output() onClickImport: any = new EventEmitter();
   @Output() resetFilters: any = new EventEmitter();
+  @Output() onClickAssign: any = new EventEmitter();
+
   
   searchStr: any;
   showCustom = false;
@@ -76,6 +79,10 @@ export class CardComponent {
 
   onClickAddBtn() {
     this.onClickAdd.emit();
+  }
+
+  onClickAssignBtn() {
+    this.onClickAssign.emit();
   }
 
   onClickExportBtn() {

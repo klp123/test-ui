@@ -58,8 +58,13 @@
 
                 <div class="col-12 md:col-2 lg:col-2  p-zero">Marketing VISA</div>
                 <div class="col-12 md:col-4 lg:col-4  p-zero mbt-1em">
-                    <input pInputTextarea id="address" formControlName="marketingVisa" class="input-text" rows="4"
-                        [ngClass]="{'border-red': isInputfieldInValid('marketingVisa')}" />
+                    <!-- <input pInputTextarea id="address" formControlName="marketingVisa" class="input-text" rows="4"
+                        [ngClass]="{'border-red': isInputfieldInValid('marketingVisa')}" /> -->
+                        <p-dropdown 
+                        [options]="marketingVisaStatus" 
+                        [(ngModel)]="selectedMarketingVisaStatus" 
+                        optionLabel="name" 
+                        placeholder="Select a visa status" />
                 </div>
 
                 <div class="col-12 md:col-2 lg:col-2  p-zero">marketing Phone</div>
@@ -94,8 +99,13 @@
 
                 <div class="col-12 md:col-2 lg:col-2  p-zero">Actual VISA Status</div>
                 <div class="col-12 md:col-4 lg:col-4  p-zero mbt-1em">
-                    <input pInputTextarea id="address" formControlName="actualVisaStatus" class="input-text" rows="4"
-                        [ngClass]="{'border-red': isInputfieldInValid('actualVisaStatus')}" />
+                    <!-- <input pInputTextarea id="address" formControlName="actualVisaStatus" class="input-text" rows="4"
+                        [ngClass]="{'border-red': isInputfieldInValid('actualVisaStatus')}" /> -->
+                        <p-dropdown 
+                        [options]="actualVisaStatus" 
+                        [(ngModel)]="selectedActualVisaStatus" 
+                        optionLabel="name" 
+                        placeholder="Select a visa status" />
                 </div>
 
                 <div class="col-12 md:col-2 lg:col-2  p-zero">RealTime Experience</div>

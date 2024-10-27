@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from "@angular/core";
+import { NgxTimelineItemPosition } from '@frxjs/ngx-timeline';
 
 import { SubmissionService } from "../../services/submission.service";
 import { SharedService } from "../../../shared/service/shared.service";
@@ -21,8 +22,10 @@ export class ListSubmissionComponent implements OnInit {
   isLoading = false;
   selectedConsultant = '';
   showImportDialog = false;
+  showAssignSubmisson = false;
   statusUpdateTime: any;
   tableWidthProp = 12;
+  currentSubmissionData: any;
   hoursFormat = "12";
   timeLineWidthProp = 0;
   showAddConsultantOrVendor = false;
@@ -73,6 +76,12 @@ export class ListSubmissionComponent implements OnInit {
     this.sharedSvc.appliedGroupBy$.subscribe((event: string) => {
       if (event) {
         this.groupBy = event;
+        this.groupByValues.forEach((element: any) => {
+          console.log(element.name === this.groupBy);
+          if (element.name.toLowerCase() === this.groupBy.toLowerCase()) {
+              this.groupBy = element.code;
+          }
+      });
         let groupByEvent = this.groupByValues.filter((data: any) => data.name === event);
         this.filters.groupBy = groupByEvent[0].code;
         this.getSubmissions(this.filters);
@@ -104,6 +113,7 @@ export class ListSubmissionComponent implements OnInit {
 
   onSelectAction(event: any) {
     this.submissionId = event.id;
+    this.currentSubmissionData = event;
     if (event.action === "edit") {
       this.showSubmissionUpdate = true;
     } else if (event.action === "view") {
@@ -135,6 +145,11 @@ export class ListSubmissionComponent implements OnInit {
     this.selectedUpdateVal = event;
   }
 
+  getNextTimeLineIndex() {
+    let timeLineData = this.currentSubmissionData.statusTimeLine;
+   return timeLineData?.length + 1;
+  }
+
   updateSubmission(type: string) {
     let toUpdateObj = {};
     if (type === 'status') {
@@ -147,16 +162,16 @@ export class ListSubmissionComponent implements OnInit {
 
   prepareToViewTimeLine(timelineData: any) {
     this.timeLineViewData = [];
+    this.timeLineViewData.sort((a: any,b: any) => a.index - b.index);
     timelineData.forEach((element: any, index: number) => {
       let timeLineObj: any = {};
       timeLineObj.timestamp = new Date(element.timeStamp),
       timeLineObj.description = element.notes,
-      timeLineObj.title = element.status,
+      timeLineObj.title = element.status +  '( ' + element.index + ' )',
       timeLineObj.description  = element.subStatus,
-      timeLineObj.itemPosition = index % 2 === 0 ? 'left' : 'right'
+      timeLineObj.itemPosition = element.index % 2 === 0 ?  NgxTimelineItemPosition.ON_LEFT :  NgxTimelineItemPosition.ON_RIGHT;
       this.timeLineViewData.push(timeLineObj);
     });
-    this.timeLineViewData.reverse();
     return timelineData;
   }
 
@@ -165,10 +180,12 @@ export class ListSubmissionComponent implements OnInit {
       status: this.selectedUpdateVal.toUpperCase(),
       subStatus: this.subStatus.toUpperCase(),
       timeStamp: this.statusUpdateTime,
-      notes: this.statusTimeLineNotes
+      notes: this.statusTimeLineNotes,
+      index: this.getNextTimeLineIndex()
     }
-    this.statusTimeLine.push(statusTimeLineData);
-    return this.statusTimeLine;
+    let timeLineData = this.currentSubmissionData.statusTimeLine;
+    timeLineData.push(statusTimeLineData);
+    return timeLineData;
   }
 
   editSubmission() {
@@ -276,6 +293,10 @@ export class ListSubmissionComponent implements OnInit {
 
   addNew() {
     this.showAddSubmisson = true;
+  }
+
+  asignSubmission() {
+    this.showAssignSubmisson = true;
   }
 
   onUploadImportData(event: any) {

@@ -26,6 +26,24 @@
                     </ng-template>
                 </div>
 
+                <div class="col-12 md:col-2 lg:col-2 ">CC</div>
+                <div class="col-12  md:col-9 lg:col-9">
+                    <ng-autocomplete [data]="filteredConsultantData" [searchKeyword]="'email'" formControlName="cc"
+                        (selected)='selectEvent($event)' (inputChanged)="onSearchEmail($event)"
+                        (inputFocused)='onFocused($event)' [itemTemplate]="itemTemplate1"
+                        [ngClass]="{'border-red': isInputfieldInValid('toEmail')}"
+                        [notFoundTemplate]="notFoundTemplate">
+                    </ng-autocomplete>
+
+                    <ng-template #itemTemplate1 let-item>
+                        <a [innerHTML]="item.name"></a>
+                    </ng-template>
+
+                    <ng-template #notFoundTemplate let-notFound>
+                        <div [innerHTML]="notFound"></div>
+                    </ng-template>
+                </div>
+
                 <div class="col-12 md:col-2 lg:col-2">Subject</div>
                 <div class="col-12 md:col-9 lg:col-9">
                     <input pInputText class="input-text" formControlName="subject" type="email"

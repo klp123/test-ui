@@ -14,8 +14,16 @@
   flex-wrap: wrap;
 }
 
+.submission-text-2 {
+  cursor: pointer;
+}
+
+.active {
+  text-decoration: underline;
+}
+
 .flex-container>div {
-  margin: 0px 0px 0px 20px;
+  margin: 0px 0px 0px 8rem !important;
   text-align: center;
   font-size: 20px;
 }

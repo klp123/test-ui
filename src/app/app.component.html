@@ -1,24 +1,19 @@
 <div *ngIf="!authPage">
   <div class="layout-topbar">
     <app-header></app-header>
-    
   </div>
   <div class="bg-white">
-  <div>
-    <app-sidebar></app-sidebar>
-  </div>
-  <section class="home-section" [ngClass]="{'min-home-section': !hideSideMenu, 'exp-home-section': hideSideMenu}">
-    <div class="home-content">
-      <div class="grid">
-        <div class="col-12 md:col-12 lg:col-12">
-
-          <app-sub-menu></app-sub-menu>
-          <router-outlet></router-outlet>
+    <section class="home-section" [ngClass]="{'min-home-section': !hideSideMenu, 'exp-home-section': hideSideMenu}">
+      <div class="home-content">
+        <div class="grid">
+          <div class="col-12 md:col-12 lg:col-12">
+            <app-sub-menu></app-sub-menu>
+            <router-outlet></router-outlet>
+          </div>
         </div>
+        <app-footer></app-footer>
       </div>
-      <app-footer></app-footer>
-    </div>
-  </section>
+    </section>
   </div>
 </div>
 

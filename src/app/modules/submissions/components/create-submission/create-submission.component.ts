@@ -20,6 +20,7 @@ export class CreateSubmissionComponent {
   keyword: any;
   errorMessage = '';
   userType = '';
+  companyId = '';
   consultantId = null;
   vendorId = null;
   message: any = [{ severity: '', detail: '' }];
@@ -63,12 +64,12 @@ export class CreateSubmissionComponent {
       }
     });
     this.disableVendorFields();
-    // this.consultantSvc.addConsultantEvent$.subscribe((data: any) => {
-    //   if (data) {
-    //     this.userType = 'consultant';
-    //     this.selectEvent(data);
-    //   }
-    // });
+    this.consultantSvc.addConsultantEvent$.subscribe((data: any) => {
+      if (data) {
+        this.userType = 'consultant';
+        this.selectEvent(data);
+      }
+    });
   }
 
   onSubmit(): void {
@@ -155,7 +156,7 @@ export class CreateSubmissionComponent {
       vendorId: this.vendorId,
       recruiterName: this.sharedSvc.getLoggedInUserName(),
       recruiterId: this.sharedSvc.getLoggedInUserId(),
-      vendorCompanyId: this.filteredCompanyData[0].id,
+      vendorCompanyId: this.companyId,
       createdBy: this.sharedSvc.getLoggedInUserId()
     }
 
@@ -216,6 +217,7 @@ export class CreateSubmissionComponent {
   }
   
   private setCompanyValues(event: any) {
+    this.companyId = event.id;
     this.submissionForm.get('vendorCompany')?.setValue(event.name);
     this.enableVendorFields();
   }

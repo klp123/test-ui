@@ -2,50 +2,42 @@
 
     <div>
     <div class="subnav">
-        <button class="subnavbtn">Vehicles  <i class="fa fa-caret-down"></i></button>
+        <button class="subnavbtn"  [ngClass]="{'active': selectedMenu === '/consultants/list'}"><a RouterLink="recruiters/list" >RECRUITERS </a><i class="fa fa-caret-down"></i></button>
         <div class="subnav-content">
             <div>
 
                 <div class="grid">
                     <div class="col-12 md:col-1 lg:col-1 pzero"></div>
-                    <div class="col-12 md:col-2 lg:col-2">
-                        <p class="submission-text">Submission</p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                             Ad explicabo dolorem neque hic eius vero saepe error! Itaque, aliquid libero?
-                        </p>
+                    <div class="col-12 md:col-2 lg:col-2" [ngClass]="{'active': selectedMenu === '/submissions/lis'}">
+                        <p class="submission-text" (click)="onSelectMenu('/submissions/list')">Submission</p>
                     </div>
                     <div class="col-12 md:col-2 lg:col-2">
                        
-                        <p class="submission-text">Consultants</p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                           
-                        </p>
+                        <p class="submission-text" (click)="onSelectMenu('/consultants/list')">Consultants</p>
                     </div>
                     <div class="col-12 md:col-2 lg:col-2">
                        
-                        <p class="submission-text">Recruiters</p>
-                        <p>
+                        <p class="submission-text" (click)="onSelectMenu('/recruiters/list')">Recruiters</p>
+                        <!-- <p>
                             explicabo dolorem neque hic eius vero saepe error! Itaque, 
                             Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        </p>
+                        </p> -->
                     </div>
                     <div class="col-12 md:col-2 lg:col-2">                        
-                        <p class="submission-text">Vendors</p>
-                        <p>
+                        <p class="submission-text" (click)="onSelectMenu('/vendors/list')">Vendors</p>
+                        <!-- <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit.
                             explicabo dolorem neque hic eius vero saepe error! Itaque, 
-                        </p>
+                        </p> -->
                     </div>
 
                     <div class="col-12 md:col-2 lg:col-2">
                        
-                        <p class="submission-text">Emails</p>
-                        <p>
+                        <p class="submission-text" (click)="onSelectMenu('/email/list')">Emails</p>
+                        <!-- <p>
                             explicabo dolorem neque hic eius vero saepe error! Itaque, 
                             Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        </p>
+                        </p> -->
                     </div>
 
                     <div class="col-12 md:col-1 lg:col-1"></div>
@@ -55,7 +47,7 @@
         </div>
     </div>
     <div class="subnav">
-        <button class="subnavbtn">Energy  <i class="fa fa-caret-down"></i></button>
+        <button class="subnavbtn">TECH MANAGER<i class="fa fa-caret-down"></i></button>
         <div class="subnav-content">
             <div class="grid">
                 <div class="col-12 md:col-1 lg:col-1 pzero"></div>
@@ -104,7 +96,7 @@
         </div>
     </div>
     <div class="subnav">
-        <button class="subnavbtn">Charging <i class="fa fa-caret-down"></i></button>
+        <button class="subnavbtn">VENDOR<i class="fa fa-caret-down"></i></button>
         <div class="subnav-content">
             <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi recusandae praesentium
                 reprehenderit doloribus! Sequi inventore, vitae iure, dolorem ullam iste, animi atque
@@ -131,7 +123,7 @@
     </div>
 
     <div class="subnav">
-        <button class="subnavbtn">Discover <i class="fa fa-caret-down"></i></button>
+        <button class="subnavbtn">END-CLIENT <i class="fa fa-caret-down"></i></button>
         <div class="subnav-content">
             <div> lcksdlckndlicn ;djcsd clidncd lbdlckdLorem ipsum dolor sit, amet consectetur adipisicing elit. Animi recusandae praesentium
                 reprehenderit doloribus! Sequi inventore, vitae iure, dolorem ullam iste, animi atque
@@ -159,35 +151,9 @@
 
 
     <div class="subnav">
-        <button class="subnavbtn">Shop <i class="fa fa-caret-down"></i></button>
+        <button class="subnavbtn">CLIENT<i class="fa fa-caret-down"></i></button>
         <div class="subnav-content">
             <div>Lorem  lcksdlckndlicn ;djcsd clidncd lbdlckdipsum dolor sit, amet consectetur adipisicing elit. Animi recusandae praesentium
-                reprehenderit doloribus! Sequi inventore, vitae iure, dolorem ullam iste, animi atque
-                perspiciatis libero illo sapiente numquam nihil ipsam ipsa!
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi recusandae praesentium
-                reprehenderit doloribus! Sequi inventore, vitae iure, dolorem ullam iste, animi atque
-                perspiciatis libero illo sapiente numquam nihil ipsam ipsa
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi recusandae praesentium
-                reprehenderit doloribus! Sequi inventore, vitae iure, dolorem ullam iste, animi atque
-                perspiciatis libero illo sapiente numquam nihil ipsam ipsa
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi recusandae praesentium
-                reprehenderit doloribus! Sequi inventore, vitae iure, dolorem ullam iste, animi atque
-                perspiciatis libero illo sapiente numquam nihil ipsam ipsa
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi recusandae praesentium
-                reprehenderit doloribus! Sequi inventore, vitae iure, dolorem ullam iste, animi atque
-                perspiciatis libero illo sapiente numquam nihil ipsam ipsaLorem ipsum dolor sit, amet
-                consectetur adipisicing elit. Animi recusandae praesentium reprehenderit doloribus! Sequi
-                inventore, vitae iure, dolorem ullam iste, animi atque perspiciatis libero illo sapiente numquam
-                nihil ipsam ipsaLorem ipsum dolor sit, amet consectetur adipisicing elit. Animi recusandae
-                praesentium reprehenderit doloribus! Sequi inventore, vitae iure, dolorem ullam iste, animi
-                atque perspiciatis libero illo sapiente numquam nihil ipsam ipsa
-            </div>
-        </div>
-    </div> 
-    <div class="subnav">
-        <button class="subnavbtn">We Robot <i class="fa fa-caret-down"></i></button>
-        <div class="subnav-content">
-            <div>L sd'pfkzgv 63464orem ipsum dolor sit, amet consectetur adipisicing elit. Animi recusandae praesentium
                 reprehenderit doloribus! Sequi inventore, vitae iure, dolorem ullam iste, animi atque
                 perspiciatis libero illo sapiente numquam nihil ipsam ipsa!
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi recusandae praesentium

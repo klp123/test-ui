@@ -39,6 +39,12 @@ export class ListVendorComponent implements OnInit {
     this.sharedSvc.appliedGroupBy$.subscribe((event: string) => {
       if (event) {
         this.groupBy = event;
+        this.groupByValues.forEach((element: any) => {
+          if (element.name.toLowerCase() === this.groupBy.toLowerCase()) {
+            this.groupBy = element.value;
+            this.getVendors({ 'groupBy': this.groupBy });
+          }
+      });
       }
     });
   }

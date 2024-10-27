@@ -20,6 +20,7 @@ import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 import { DialogComponent } from '../shared/components/dialog/dialog.component';
 import { CardComponent } from '../shared/components/card/card.component';
 import { DropdownComponent } from '../shared/components/dropdown/dropdown.component';
+import { DropdownModule } from 'primeng/dropdown';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { DropdownComponent } from '../shared/components/dropdown/dropdown.compon
     FieldsetModule,
     FileUploadComponent,
     TableComponent,
+    DropdownModule,
     CalenderComponent,
     InputSwitchModule,
     AutocompleteLibModule,

@@ -1,7 +1,7 @@
 <div class="grid">
     <div class="col-12 md:col-12 lg:col-12 ">
         <app-card [groupByValues]="groupByValues" (selectedDateRange)="selectedDateRange($event)"
-            (onClickAdd)="addNew()" (onClickExport)="downloadExcel()" (onClickImport)="onClickImport()"
+            (onClickAdd)="addNew()" (onClickExport)="downloadExcel()" (onClickAssign)="asignSubmission()" (onClickImport)="onClickImport()"
             (resetFilters)="resetFilters()">
         </app-card>
     </div>
@@ -24,44 +24,37 @@
         <div class="grid mt-2">
             <div class="col-12 md:col-3 lg:col-3">Status :</div>
             <div class="col-12 md:col-9 lg:col-9">
-            <app-dropdown [dropDownValues]="toUpdateStatusValues"
-                (selectedValueEmitter)="onSelectUpdateValues($event)"></app-dropdown>
-        </div>
-        <div class="col-12 md:col-3 lg:col-3">Date :</div>
-        <div class="col-12 md:col-9 lg:col-9">
-        <p-calendar appendTo="body"
-            inputId="calendar-12h" 
-            [(ngModel)]="statusUpdateTime" 
-            [showTime]="true" 
-            [hourFormat]="hoursFormat" />
-        </div>
-        <div class="col-12 md:col-3 lg:col-3">Notes :</div>
-        <div class="col-12 md:col-9 lg:col-9">
-            <textarea class="notes-submission-textarea" rows="8" [(ngModel)]="statusTimeLineNotes" >
+                <app-dropdown [dropDownValues]="toUpdateStatusValues"
+                    (selectedValueEmitter)="onSelectUpdateValues($event)"></app-dropdown>
+            </div>
+            <div class="col-12 md:col-12 lg:col-12">
+                <div *ngIf="updateValuesList.indexOf(selectedUpdateVal) > -1">
+                    <app-button [label]="'Scheduled'" [rounded]="true"
+                        severity="{{subStatus === 'sceduled' ? 'primary' : 'secondary'}}" class="mr-2  "
+                        (click)="selectSubStatus('scheduled')" />
+                    <app-button [label]="'Awaiting'" [rounded]="true"
+                        severity="{{subStatus === 'awaiting' ? 'primary' : 'secondary'}}" class="mr-2 "
+                        (click)="selectSubStatus('awaiting')" />
+                    <app-button [label]="'Passed'" [rounded]="true"
+                        severity="{{subStatus === 'passed' ? 'primary' : 'secondary'}}" class="mr-2 "
+                        (click)="selectSubStatus('passed')" />
+                    <app-button [label]="'Failed'" [rounded]="true"
+                        severity="{{subStatus === 'failed' ? 'primary' : 'secondary'}}" class="mr-2 "
+                        (click)="selectSubStatus('failed')" />
+                </div>
+            </div>
+            <div class="col-12 md:col-3 lg:col-3">Date :</div>
+            <div class="col-12 md:col-9 lg:col-9">
+                <p-calendar appendTo="body" inputId="calendar-12h" [(ngModel)]="statusUpdateTime" [showTime]="true"
+                    [hourFormat]="hoursFormat" />
+            </div>
+            <div class="col-12 md:col-3 lg:col-3">Notes :</div>
+            <div class="col-12 md:col-9 lg:col-9">
+                <textarea class="notes-submission-textarea" rows="8" [(ngModel)]="statusTimeLineNotes">
             </textarea>
-        </div>
-       
-    </div>
-      
-
-        <div class="col-12 md:col-12 lg:col-12">
-            <div *ngIf="updateValuesList.indexOf(selectedUpdateVal) > -1">
-                <app-button [label]="'Scheduled'" [rounded]="true"
-                    severity="{{subStatus === 'sceduled' ? 'primary' : 'secondary'}}" class="mr-2  "
-                    (click)="selectSubStatus('scheduled')" />
-                <app-button [label]="'Awaiting'" [rounded]="true"
-                    severity="{{subStatus === 'awaiting' ? 'primary' : 'secondary'}}" class="mr-2 "
-                    (click)="selectSubStatus('awaiting')" />
-                <app-button [label]="'Passed'" [rounded]="true"
-                    severity="{{subStatus === 'passed' ? 'primary' : 'secondary'}}" class="mr-2 "
-                    (click)="selectSubStatus('passed')" />
-                <app-button [label]="'Failed'" [rounded]="true"
-                    severity="{{subStatus === 'failed' ? 'primary' : 'secondary'}}" class="mr-2 "
-                    (click)="selectSubStatus('failed')" />
             </div>
         </div>
 
-       
     </div>
     <div class="">
         <app-button [label]="'Update'" [rounded]="false" severity="primary" (click)="updateSubmission('status')"
@@ -72,6 +65,13 @@
 <p-dialog header="Create Submission" [modal]="true" [(visible)]="showAddSubmisson" class="submission-dialog">
     <div class="add-submission">
         <app-create-submission (selectedActionEmitter)="onSubmitForm()"></app-create-submission>
+    </div>
+</p-dialog>
+
+
+<p-dialog header="Assign Submission" [modal]="true" [(visible)]="showAssignSubmisson" class="submission-dialog">
+    <div class="add-submission">
+        <p> hi hello</p>
     </div>
 </p-dialog>
 

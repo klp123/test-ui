@@ -27,6 +27,7 @@ export class ListEmailComponent {
 
   constructor(public sharedSvc: SharedService, public emailSvc: EmailService ) { 
     this.getTableConfigs();
+    this.getEmails({});
   }
 
   closeModal() {
@@ -82,30 +83,36 @@ export class ListEmailComponent {
     this.getEmails(dates);
   }
 
+  sendEmail() {
+
+  }
+
   getEmails(filters: any) {
     if (this.loggedInUserType === 'benchSaleRecruiter' || this.loggedInUserType === 'teamLead') {
       filters.loggedInUserId = this.sharedSvc.getLoggedInUserId();
     }
-    // this.emailSvc.getAllEmails(filters).subscribe(
-    //   (response: any) => {
-    //     if (response && response.status_code === 0) {
-    //       this.data = this.prepareResponse(response.vendorsList);
-    //     } else if (response && response.status_code === 1) {
-    //       console.log(response.message);
-    //     }
-    //   },
-    //   (error: any) => {
-    //     console.log("Something went wrong");
-    //   }
-    // );
+    this.emailSvc.getEmails().subscribe(
+      (response: any) => {
+        if (response && response.status_code === 0) {
+          this.data = this.prepareResponse(response.emailsList);
+        } else if (response && response.status_code === 1) {
+          console.log(response.message);
+        }
+      },
+      (error: any) => {
+        console.log("Something went wrong");
+      }
+    );
   }
 
   prepareResponse(data: any) {
     data.forEach((element: any, index: number) => {
       element.id = index;
-      element.name = element.firstName + ' ' + element.lastName;
-      if (element && element.notes) {
-        element.subNotes = element.notes.substring(0, 15) + '...';
+      if (element && element.subject) {
+        element.subjectMeta = element.subject.substring(0, 15) + '...';
+      }
+      if (element && element.description) {
+        element.descriptionMeta = element.description.substring(0, 15) + '...';
       }
     });
     return data;
@@ -114,12 +121,10 @@ export class ListEmailComponent {
   onSelectAction(event: any) {}
 
   getTableConfigs() {
-    this.sharedSvc.getTableHeaders('vendor/vendor').subscribe((data: any) => {
+    this.sharedSvc.getTableHeaders('email/email').subscribe((data: any) => {
       if (data) {
         this.columns = data.columns;
         this.rows = data.rows;
-        this.toUpdateStatusValues = data.toUpdateStatusValues;
-        this.groupByValues = data.groupByValues;
         this.tableWidth = data.tableWidth;
       }
     })

@@ -2,10 +2,7 @@
     overflow: hidden;
     color: #333; 
     width: 100%;
-    margin-left: 18%;
-    // position: relative;
-    // top: 1.3em;
-    // background-color: blueviolet;
+    margin-left: 10%;
   }
   
   .navbar a {
@@ -15,6 +12,22 @@
     text-align: center;
     // padding: 14px 16px;
     text-decoration: none;
+  }
+
+  button:hover {
+   cursor: pointer;
+  }
+
+  .submission-text:hover {
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  
+.active {
+    background-color: #d0d1d24d;
+    color: black;
   }
   
   .subnav {
@@ -65,6 +78,7 @@
   .submission-text{
     font-size: 20px;
     font-weight: 500;
+    cursor: pointer;
   }
 
 @media (max-width: 499px) {
@@ -77,7 +91,7 @@
     overflow: hidden;
     color: #333; 
     width: 100%;
-    margin-left: 1%;
+    margin-left: 10%;
 }
 
 .pzero{

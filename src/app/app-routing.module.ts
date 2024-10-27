@@ -20,7 +20,7 @@ const routes: Routes = [
   {
     path: 'recruiters',
     loadChildren: () => import('././modules/recruiters/recruiters.module').then(m => m.RecruitersModule),
-     canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: 'vendors',

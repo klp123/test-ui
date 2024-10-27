@@ -1,0 +1,58 @@
+{
+    "columns": [
+      {
+        "header": "From Email",
+        "headerWidth": "7%"
+      },
+      {
+        "header": "To Email",
+        "headerWidth": "7%"
+      },
+      {
+        "header": "Subject",
+        "headerWidth": "8%"
+      },
+      {
+        "header": "Description",
+        "headerWidth": "8%"
+      },
+      {
+        "header": "Sent On",
+        "headerWidth": "8%",
+        "rowDataFilter": "date"
+      },
+      {
+        "header": "Sent By",
+        "headerWidth": "8%"
+      }
+    ],
+    "rows": [
+      {
+        "name": "from",
+        "dataFilter": " "
+      },
+      {
+        "name": "to",
+        "dataFilter": " "
+      },
+      {
+        "name": "subject",
+        "dataFilter": " "
+      },
+      {
+        "name": "description",
+        "dataFilter": " ",
+         "type": "link"
+      },
+      {
+        "name": "createdAt",
+        "dataFilter": " "
+      },
+      {
+        "name": "createdBy",
+        "dataFilter": " "
+      }
+    ],
+    "tableWidth": "75rem"
+  }
+  

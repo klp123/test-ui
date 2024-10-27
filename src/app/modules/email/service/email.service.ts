@@ -10,6 +10,10 @@ export class EmailService {
 
   constructor(private http: HttpClient) {}
 
+  getEmails(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/getEmails`);
+  }
+
   sendEmail(payload: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/sendEmail`, payload);
   }

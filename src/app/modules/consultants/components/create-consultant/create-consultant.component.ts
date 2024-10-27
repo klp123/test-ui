@@ -17,9 +17,13 @@ export class CreateConsultantComponent {
   checked = false;
   isLoading = false;
   formData: any;
+  selectedActualVisaStatus: any = '';
+  selectedMarketingVisaStatus: any = '';
   showMessage = false;
   editForm = false
   errorMessage = '';
+  marketingVisaStatus: any = [];
+  actualVisaStatus: any = [];
   range = 'single';
   message: any = [{ severity: '', detail: '' }];
   submitClicked = false;
@@ -28,6 +32,19 @@ export class CreateConsultantComponent {
 
 
   ngOnInit(): void {
+    this.actualVisaStatus = this.marketingVisaStatus = [
+      { "name": "OPT", "code": "OPT" },
+      { "name": "CPT", "code": "CPT" },
+      { "name": "H1B", "code": "H1B" },
+      { "name": "H4-EAD", "code": "H4-EAD" },
+      { "name": "GCEAD", "code": "GCEAD" },
+      { "name": "GC", "code": "GC" },
+      { "name": "CITIZEN", "code": "CITIZEN" },
+      { "name": "L1", "code": "L1" },
+      { "name": "L2", "code": "L2" },
+      { "name": "TN", "code": "TN" }
+    ]
+    ;
     this.consultantForm = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],

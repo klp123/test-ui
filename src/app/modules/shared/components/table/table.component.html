@@ -4,7 +4,7 @@
       <i class="pi pi-search search-icon"></i>
       <input pInputText class="globla-input" placeholder="Global Search" [(ngModel)]="searchString" (ngModelChange)="onSearchGlobal()"/>
     </div>
-    <div class="col-12 md:col-3 lg:col-3 pad-2em">
+    <div class="col-12 md:col-3 lg:col-3 pad-2em" *ngIf="pageType === 'submission'">
       <p-multiSelect display="chip" [options]="columns" [(ngModel)]="selectedColumns" optionLabel="header"
         selectedItemsLabel="{0} columns selected" [style]="{'min-width': '100px'}" placeholder="Choose Columns"
         (onChange)="onSelectColumns($event)" />
@@ -17,7 +17,7 @@
   </div>
   <div *ngIf="!groupBy" class="table-scroll">
     <p-table [value]="data" dataKey="id" [tableStyle]="{ 'min-width': tableWidth }" [paginator]="true"
-      [rowsPerPageOptions]="[5, 10, 20]" [expandedRowKeys]="expandedRows" [rows]="20" selectionMode="single"
+      [rowsPerPageOptions]="[5, 8]" [expandedRowKeys]="expandedRows" [rows]="8" selectionMode="single"
       [metaKeySelection]="metaKey" [exportHeader]="'customExportHeader'" dataKey="id" [columns]="columns" [(selection)]="selectItem" [metaKeySelection]="metaKey" >
       <ng-template pTemplate="header" let-columns>
         <tr>
@@ -31,7 +31,7 @@
       <ng-template pTemplate="body"  let-data let-editing="editing" let-expanded="expanded" let-columns="columns">
         <tr [pSelectableRow]="data" (click)="onClickCell(data)" (keyup.enter)="onClickCell(data);" id="testing"
           [ngClass]="{'p-highlight': data._id === selectedCellId}" class="bgm-test">
-          <td>
+          <td  *ngIf="pageType !== 'email'" >
             <!-- <p-button *ngIf="table === 'submission'" type="button" pRipple [pRowToggler]="data" [text]="true"
               [rounded]="true" [plain]="true" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"
               (click)="onSelectAction(data, 'view')" /> -->
@@ -83,8 +83,8 @@
   </div>
 
   <div *ngIf="groupBy">
-    <p-table [value]="data" dataKey="{{filterGroupByValue()}}" rowGroupMode="subheader"
-      groupRowsBy="{{filterGroupByValue()}}" [tableStyle]="{ 'min-width': '180rem' }" [paginator]="true"
+    <p-table [value]="data" dataKey="groupBy" rowGroupMode="subheader"
+      groupRowsBy="groupBy" [tableStyle]="{ 'min-width': tableWidth }" [paginator]="true"
       [rowsPerPageOptions]="[5, 10, 20]" [rows]="20">
       <ng-template pTemplate="header">
         <th class="table-header" pSortableColumn="code" *ngFor="let column of columns"
@@ -100,11 +100,11 @@
               [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'">
             </button>
             <span class="font-bold ml-2"
-              *ngIf="filterGroupByValue() === 'createdAt'">{{data[filterGroupByValue()].split('T')[0]}}</span>
+              *ngIf="groupBy === 'createdAt'">{{data[groupBy].split('T')[0]}}</span>
             <span class="font-bold ml-2"
-              *ngIf="filterGroupByValue() != 'createdAt'">{{data[filterGroupByValue()]}}</span>
+              *ngIf="groupBy != 'createdAt'">{{data[groupBy]}}</span>
             <span class="font-bold ml-1"
-              *ngIf="table === 'submission'">({{getSubmissionCount(data[filterGroupByValue()])}})</span>
+              *ngIf="table === 'submission'">({{getSubmissionCount(data[groupBy])}})</span>
 
           </td>
         </tr>
@@ -112,8 +112,8 @@
       <ng-template pTemplate="rowexpansion" let-data>
         <tr class="table-row" [pSelectableRow]="data">
           <td>
-            <app-button *ngIf="table === 'submission'" [icon]="'pi pi-history'" [severity]="'secondary'"
-              (click)="onSelectAction(data, 'view')" class="mr-2"></app-button>
+            <!-- <app-button *ngIf="table === 'submission'" [icon]="'pi pi-history'" [severity]="'secondary'"
+              (click)="onSelectAction(data, 'view')" class="mr-2"></app-button> -->
             <app-button [icon]="'pencil'" [severity]="'secondary'" (click)="onSelectAction(data, 'edit')"
               class="mr-2 ml-2 "></app-button>
           </td>

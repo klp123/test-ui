@@ -57,8 +57,6 @@ export class TableComponent {
     ngOnInit() {
         this.loggedInUserType = this.sharedSvc.getLoggedInUserType();
         this.showDelete = this.sharedSvc.getUserTypePermissions(this.loggedInUserType, this.pageType)?.delete;
-        console.log(this.showDelete)
-        this.addRemoveClass();
     }
 
     getRows() {
@@ -128,15 +126,16 @@ export class TableComponent {
         return dataVal;
     }
 
-    filterGroupByValue(): string {
-        let toReturnVal = '';
-        this.groupByValues.forEach((element: any) => {
-            console.log(element.name, this.groupBy);
-            if (element.name === this.groupBy) {
-                toReturnVal = element.code;
-            }
-        });
-        return toReturnVal;
+    filterGroupByValue(): any {
+        // let toReturnVal = '';
+        // this.groupByValues.forEach((element: any) => {
+        //     console.log(element.name === this.groupBy);
+        //     if (element.name.toLowerCase() === this.groupBy.toLowerCase()) {
+        //         toReturnVal = element.code;
+        //     }
+        // });
+
+        // return toReturnVal;
     }
 
 
@@ -178,14 +177,6 @@ export class TableComponent {
         });
         return count;
     }
-
-    addRemoveClass(){
-        // getElementsByClassName or getElementsByTagName
-        document.getElementsByTagName('testing')[0].classList.add('providerMakeChanges');
-        setTimeout(()=>{
-          document.getElementsByTagName('body')[0].classList.remove('providerMakeChanges');
-        }, 5000)
-      }
 
     onClickCell(data: any) {
         this.selectedCellId = data._id;

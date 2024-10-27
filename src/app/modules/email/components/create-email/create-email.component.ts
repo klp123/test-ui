@@ -23,6 +23,7 @@ export class CreateEmailComponent implements OnInit {
     this.emailForm = this.fb.group({
       fromEmail: [localStorage.getItem('userEmail'), [Validators.required]],
       toEmail: ['', Validators.required],
+      cc: [''],
       subject: ['', Validators.required],
       description: [''],
       toEmailReset: ['']

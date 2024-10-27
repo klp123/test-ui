@@ -52,7 +52,8 @@ export class SharedService {
     }
 
     getLoggedInUserName(){
-      return this.loginUserDetails.firstName + ' ' + this.loginUserDetails.lastName;
+      let userDetails = JSON.parse(localStorage.getItem('userData') || '{}');
+      return userDetails.firstName + ' ' + userDetails.lastName;
     }
 
     getUserTypePermissions(userLoggedInType: string, page?: string) {
