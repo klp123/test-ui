@@ -109,6 +109,13 @@ width: 100%;
 .pad-2em{
     padding: 1.3em 1em;
 }
+
+.table_input_edit{
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
 @media (max-width: 499px) {
     :host ::ng-deep .p-dropdown-items-wrapper ul {
         padding-left: 0em !important;

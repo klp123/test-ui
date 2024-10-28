@@ -58,7 +58,19 @@ app-timeline {
   height: auto;
   // left: 9vw;
 }
-
+:host ::ng-deep .assign-dialog .p-dialog { 
+  width: 38vw;
+  height: 20em;
+}
+.fright{
+  float: right;
+}
+.assign-input{
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+}
 :host ::ng-deep .submission-dialog .p-dialog .p-dialog-content {
   padding: 0px 0rem 2rem 2.5rem;
   overflow-x: hidden;
@@ -181,7 +193,8 @@ app-timeline {
   app-timeline {
     margin-top: 0rem;
   }
-
+  
+ 
   .position-top {
     padding-top: 11em;
     padding-bottom: 1em;
@@ -199,7 +212,10 @@ app-timeline {
     width: 25em !important;
     height: 25em !important;
   }
-
+  :host ::ng-deep .assign-dialog .p-dialog { 
+    width: 90%;
+    height: auto;
+  }
   .submission--notes--popup {
     width: 15rem;
     height: 25rem;

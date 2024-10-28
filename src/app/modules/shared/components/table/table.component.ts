@@ -12,13 +12,13 @@ import { ButtonComponent } from '../button/button.component';
 import { SharedService } from '../../service/shared.service';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { MultiSelectModule } from 'primeng/multiselect';
-
+import { CheckboxModule } from 'primeng/checkbox';
 
 @Component({
     selector: 'app-table',
     templateUrl: './table.component.html',
     styleUrl: './table.component.scss',
-    imports: [TableModule, DialogModule, TimelineComponent, ToolbarModule, ButtonComponent, ButtonModule, FormsModule, CommonModule, TagModule, DropdownComponent, OverlayPanelModule, MultiSelectModule],
+    imports: [TableModule, DialogModule, TimelineComponent, ToolbarModule, ButtonComponent, ButtonModule, FormsModule, CommonModule, TagModule, DropdownComponent, OverlayPanelModule, MultiSelectModule, CheckboxModule],
     standalone: true
 })
 
