@@ -15,12 +15,12 @@ const routes: Routes = [
   {
     path: 'consultants',
     loadChildren: () => import('././modules/consultants/consultants.module').then(m => m.ConsultantsModule),
-     canActivate: [AuthGuard]
+     // canActivate: [AuthGuard]
   },
   {
     path: 'recruiters',
     loadChildren: () => import('././modules/recruiters/recruiters.module').then(m => m.RecruitersModule),
-    canActivate: [AuthGuard]
+    // canActivate: [AuthGuard]
   },
   {
     path: 'vendors',
