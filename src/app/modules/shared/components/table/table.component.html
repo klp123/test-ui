@@ -35,16 +35,33 @@
             <!-- <p-button *ngIf="table === 'submission'" type="button" pRipple [pRowToggler]="data" [text]="true"
               [rounded]="true" [plain]="true" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"
               (click)="onSelectAction(data, 'view')" /> -->
+              <p-tableCheckbox [value]="data" />
+
             <app-button [icon]="'pencil'" [severity]="'secondary'" (click)="onSelectAction(data, 'edit')"
               class="mr-1 pencil-btn"></app-button>
             <app-button *ngIf="showDelete" [icon]="'trash'" [severity]="'secondary'"
               (click)="onSelectAction(data, 'delete')" class="mr-2 trash-btn"></app-button>
           </td>
-          <td pEditableColumnField="code" *ngFor="let row of rows" (click)="onRowClick(data)">
+          <td pEditableColumnField="Bench Sales Recruiter"   [pEditableColumn]="data.recruiterName" *ngFor="let row of rows" (click)="onRowClick(data)">
+           
             <p-cellEditor>
-              <ng-template pTemplate="output">
-                {{ data[row.name] }}
-              </ng-template>
+              <ng-template pTemplate="input">
+                <input 
+                    pInputText 
+                    type="text" 
+                    class="table_input_edit"
+                    [(ngModel)]="data.recruiterName" />
+
+            </ng-template>
+            <ng-template pTemplate="output">
+           
+              {{ data[row.name] }}
+              <!-- <app-button [icon]="'pencil'" [severity]="'secondary'" (click)="onSelectAction(data, 'edit')"
+            class="mr-1 pencil-btn"></app-button> -->
+            </ng-template>
+           
+          </p-cellEditor>
+             
               <ng-template pTemplate="output"
                 *ngIf="row.dataFilter === ' ' && row.name === 'subStatus' && data[row.name]">
                 <p-tag [value]="data[row.name]" [severity]="getSeverity(data[row.name])" />
@@ -66,7 +83,7 @@
                 <app-button [icon]="'pencil'" [severity]="'secondary'" (click)="onSelectAction(data, 'notes')"
                   class="mr-2 prncil-btn2"></app-button>
               </ng-template>
-            </p-cellEditor>
+          
           </td>
         </tr>
       </ng-template>

@@ -36,7 +36,11 @@
 }
 
 @media (max-width: 499px) {
-
+  .flex-container>div {
+    margin: 0px 0px 0px 1rem !important;
+    text-align: center;
+    font-size: 20px;
+  }
   .position-top {
     padding-top: 11em;
     padding-bottom: 1em;

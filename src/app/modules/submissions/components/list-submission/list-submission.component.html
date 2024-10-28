@@ -69,9 +69,20 @@
 </p-dialog>
 
 
-<p-dialog header="Assign Submission" [modal]="true" [(visible)]="showAssignSubmisson" class="submission-dialog">
+<p-dialog header="Assign Submission" [modal]="true" [(visible)]="showAssignSubmisson" class="assign-dialog">
     <div class="add-submission">
-        <p> hi hello</p>
+        <div class="grid mt-2">
+            <div class="col-3">
+          Assign
+                </div>
+                <div class="col-9">
+                    <input type="text" placeholder="Select Assigne" class="assign-input"/>
+                </div>
+            </div>
+            <div class="fright">
+                <p-button label="Submit" />
+            </div>
+
     </div>
 </p-dialog>
 
